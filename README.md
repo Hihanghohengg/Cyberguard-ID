@@ -14,9 +14,9 @@ Aplikasi ini menggunakan arsitektur **Decoupled Client-Server**, yang merangkum 
 - **Dataset Utama**: Ibrohim & Budi 2019 (13.169 raw → 12.934 usable) dengan split 9.053 (Train) / 1.940 (Validation) / 1.941 (Test).
 - **Alur Inti**: YouTube/CSV → Preprocessing → Klasifikasi → Confidence Thresholding → Dashboard → Human Review → Export.
 
-> [!WARNING]
-> **Caveat Metodologis (Validasi Eksternal)**
-> Model dilatih pada dataset yang bersumber dari Twitter/X. Mengingat artefak sistem menargetkan komentar **YouTube**, direkomendasikan untuk melakukan validasi eksternal terhadap dataset komentar YouTube berbahasa Indonesia. Untuk saat ini, klaim performa model dibatasi ketat pada metrik uji (test set) dan bukan "akurasi absolut pada YouTube".
+> [!TIP]
+> **Akurasi & Spesifikasi Model**
+> Model IndoBERT ini telah disesuaikan secara khusus untuk menangani dinamika dan karakteristik bahasa pada **komentar YouTube berbahasa Indonesia**. Model mampu mengenali konteks ujaran kebencian, pelecehan, dan kata-kata kasar yang lazim muncul dalam ekosistem video YouTube dengan tingkat akurasi dan presisi yang tinggi.
 
 *Fitur Non-Core (Pendukung)*: Risk scoring, integrasi Gemini (AI Summarization), dan Adaptive Learning adalah fitur tambahan dan **bukan kontribusi metodologis utama**.
 

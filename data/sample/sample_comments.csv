@@ -1,0 +1,71 @@
+id,text,label,source,source_group,created_at
+1,"Terima kasih informasinya, sangat bermanfaat!",normal_konstruktif,sample,demo,2026-01-15T10:00:00Z
+2,"Acara dimulai jam berapa ya?",normal_konstruktif,sample,demo,2026-01-15T10:05:00Z
+3,"Videonya membantu sekali untuk belajar",normal_konstruktif,sample,demo,2026-01-15T10:10:00Z
+4,"Mantap bang kontennya keren",normal_konstruktif,sample,demo,2026-01-15T10:15:00Z
+5,"Semoga sukses terus channelnya",normal_konstruktif,sample,demo,2026-01-15T10:20:00Z
+6,"Salam dari Surabaya",normal_konstruktif,sample,demo,2026-01-15T10:25:00Z
+7,"Next time bahas tentang AI dong",normal_konstruktif,sample,demo,2026-01-15T10:30:00Z
+8,"Udah subscribe dan nyalain lonceng",normal_konstruktif,sample,demo,2026-01-15T10:35:00Z
+9,"Menarik banget pembahasannya",normal_konstruktif,sample,demo,2026-01-15T10:40:00Z
+10,"Baru nemu channel ini, langsung subscribe",normal_konstruktif,sample,demo,2026-01-15T10:45:00Z
+11,"Penjelasannya terlalu cepat, agak susah diikuti",kritik_wajar,sample,demo,2026-01-15T11:00:00Z
+12,"Pelayanannya masih lambat banget",kritik_wajar,sample,demo,2026-01-15T11:05:00Z
+13,"Audio-nya kurang jelas, tolong diperbaiki",kritik_wajar,sample,demo,2026-01-15T11:10:00Z
+14,"Informasinya kurang akurat menurut saya",kritik_wajar,sample,demo,2026-01-15T11:15:00Z
+15,"Pembahasannya terlalu dangkal untuk topik ini",kritik_wajar,sample,demo,2026-01-15T11:20:00Z
+16,"Videonya kepanjangan, bisa diringkas",kritik_wajar,sample,demo,2026-01-15T11:25:00Z
+17,"Durasi 3 jam tapi isinya cuma 30 menit",kritik_wajar,sample,demo,2026-01-15T11:30:00Z
+18,"Thumbnailnya clickbait, isi videonya beda",kritik_wajar,sample,demo,2026-01-15T11:35:00Z
+19,"Penjelasannya membingungkan dan tidak runtut",kritik_wajar,sample,demo,2026-01-15T11:40:00Z
+20,"Harusnya ada subtitle buat yang tunarungu",kritik_wajar,sample,demo,2026-01-15T11:45:00Z
+21,"Anjir apa banget dah",bahasa_kasar,sample,demo,2026-01-15T12:00:00Z
+22,"Kontennya sampah semua",bahasa_kasar,sample,demo,2026-01-15T12:05:00Z
+23,"Gila banget ini mah",bahasa_kasar,sample,demo,2026-01-15T12:10:00Z
+24,"Bangsat emang ini orang",bahasa_kasar,sample,demo,2026-01-15T12:15:00Z
+25,"Tai lah ga guna banget",bahasa_kasar,sample,demo,2026-01-15T12:20:00Z
+26,"Kampret kontennya bikin emosi",bahasa_kasar,sample,demo,2026-01-15T12:25:00Z
+27,"Buset dah ini apa an",bahasa_kasar,sample,demo,2026-01-15T12:30:00Z
+28,"Goblok banget ini video",bahasa_kasar,sample,demo,2026-01-15T12:35:00Z
+29,"Najis gue liat kontennya",bahasa_kasar,sample,demo,2026-01-15T12:40:00Z
+30,"Asu lah bikin kesel aja",bahasa_kasar,sample,demo,2026-01-15T12:45:00Z
+31,"Muka lo jelek banget, ngapain tampil",personal_harassment,sample,demo,2026-01-15T13:00:00Z
+32,"Dasar bodoh, otak kosong kayak botol",personal_harassment,sample,demo,2026-01-15T13:05:00Z
+33,"Orang kayak dia emang ga punya otak",personal_harassment,sample,demo,2026-01-15T13:10:00Z
+34,"Badan gendut gitu masih pede tampil",personal_harassment,sample,demo,2026-01-15T13:15:00Z
+35,"Lo tuh ga pantes jadi youtuber, tolol",personal_harassment,sample,demo,2026-01-15T13:20:00Z
+36,"Tampang kampung sok pinter",personal_harassment,sample,demo,2026-01-15T13:25:00Z
+37,"Suaranya cempreng bikin sakit telinga",personal_harassment,sample,demo,2026-01-15T13:30:00Z
+38,"Dasar oon, ga bisa mikir ya",personal_harassment,sample,demo,2026-01-15T13:35:00Z
+39,"Kualitas rendahan, persis orangnya",personal_harassment,sample,demo,2026-01-15T13:40:00Z
+40,"Ga usah bikin konten deh, memalukan",personal_harassment,sample,demo,2026-01-15T13:45:00Z
+41,"Dasar orang kafir, masuk neraka lo",hate_speech,sample,demo,2026-01-15T14:00:00Z
+42,"Orang suku itu emang rendahan semua",hate_speech,sample,demo,2026-01-15T14:05:00Z
+43,"Cina semua emang pelit dan licik",hate_speech,sample,demo,2026-01-15T14:10:00Z
+44,"Dasar banci, malu-maluin gender",hate_speech,sample,demo,2026-01-15T14:15:00Z
+45,"Orang cacat ga usah banyak ngomong",hate_speech,sample,demo,2026-01-15T14:20:00Z
+46,"Usir aja semua pendatang dari sini",hate_speech,sample,demo,2026-01-15T14:25:00Z
+47,"Agama lo emang agama teroris",hate_speech,sample,demo,2026-01-15T14:30:00Z
+48,"Orang dari daerah itu emang barbar semua",hate_speech,sample,demo,2026-01-15T14:35:00Z
+49,"Dasar ras inferior, pantas dijajah",hate_speech,sample,demo,2026-01-15T14:40:00Z
+50,"Kaum pelangi emang sakit jiwa semua",hate_speech,sample,demo,2026-01-15T14:45:00Z
+51,"Badannya sih enak buat di itu in",sexual_harassment,sample,demo,2026-01-15T15:00:00Z
+52,"Kirim foto tanpa baju dong",sexual_harassment,sample,demo,2026-01-15T15:05:00Z
+53,"Cewek gini mah tinggal gasp aja",sexual_harassment,sample,demo,2026-01-15T15:10:00Z
+54,"Dada nya gede banget, mau dong",sexual_harassment,sample,demo,2026-01-15T15:15:00Z
+55,"Ajak ke hotel yuk beb",sexual_harassment,sample,demo,2026-01-15T15:20:00Z
+56,"Mending jadi pelacur aja lo sana",sexual_harassment,sample,demo,2026-01-15T15:25:00Z
+57,"Pingin banget megang tubuh lo",sexual_harassment,sample,demo,2026-01-15T15:30:00Z
+58,"Cewe murahan emang begini",sexual_harassment,sample,demo,2026-01-15T15:35:00Z
+59,"Muka lo minta dicium itu",sexual_harassment,sample,demo,2026-01-15T15:40:00Z
+60,"Body goals, buat dijadiin istri simpanan",sexual_harassment,sample,demo,2026-01-15T15:45:00Z
+61,"Gue akan cari alamat lo dan hajar",threat_intimidation,sample,demo,2026-01-15T16:00:00Z
+62,"Awas lo, tau rumah lo gue",threat_intimidation,sample,demo,2026-01-15T16:05:00Z
+63,"Mati aja lo sana, ga ada yang peduli",threat_intimidation,sample,demo,2026-01-15T16:10:00Z
+64,"Tunggu aja, gue kirim orang ke tempat lo",threat_intimidation,sample,demo,2026-01-15T16:15:00Z
+65,"Ayo kita keroyok dia rame-rame",threat_intimidation,sample,demo,2026-01-15T16:20:00Z
+66,"Gue bunuh lo kalau ketemu",threat_intimidation,sample,demo,2026-01-15T16:25:00Z
+67,"Hati-hati di jalan ya, siapa tau ketabrak",threat_intimidation,sample,demo,2026-01-15T16:30:00Z
+68,"Lo bakal nyesel udah bikin video ini",threat_intimidation,sample,demo,2026-01-15T16:35:00Z
+69,"Gue sebar data pribadi lo ke internet",threat_intimidation,sample,demo,2026-01-15T16:40:00Z
+70,"Kita habisi dia sama-sama, bantai",threat_intimidation,sample,demo,2026-01-15T16:45:00Z

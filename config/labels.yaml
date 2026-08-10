@@ -1,0 +1,85 @@
+# CyberGuard-ID — Label Configuration
+# Definisi kategori klasifikasi komentar (Taxonomy C0-C4)
+
+categories:
+  - code: "C0"
+    internal_name: "normal"
+    display_name: "Normal"
+    definition: >
+      Komentar biasa, apresiasi, pertanyaan, informasi, diskusi,
+      atau tanggapan yang tidak menyerang.
+    base_score: 0
+    display_order: 0
+    color_token: "success"
+    recommended_action: "Tidak ada tindakan diperlukan"
+
+  - code: "C1"
+    internal_name: "abusive"
+    display_name: "Bahasa Kasar"
+    definition: >
+      Makian, kata kasar, atau profanity tanpa mengarah ke target individu
+      secara langsung (seperti mengumpat karena frustrasi).
+    base_score: 1
+    display_order: 1
+    color_token: "info"
+    recommended_action: "Pantau bila diperlukan"
+
+  - code: "C2"
+    internal_name: "hate_speech_weak"
+    display_name: "Hate Speech Lemah"
+    definition: >
+      Ujaran kebencian ringan, penghinaan atau ejekan yang ditujukan ke
+      sasaran umum atau personal namun dengan tingkat ancaman rendah.
+    base_score: 2
+    display_order: 2
+    color_token: "warning_light"
+    recommended_action: "Pantau, bisa dihapus jika melanggar pedoman komunitas ketat"
+
+  - code: "C3"
+    internal_name: "hate_speech_moderate"
+    display_name: "Hate Speech Sedang"
+    definition: >
+      Ujaran kebencian tingkat sedang. Berisi serangan agresif, diskriminatif, 
+      atau pencemaran nama baik yang berpotensi meresahkan publik.
+    base_score: 3
+    display_order: 3
+    color_token: "warning"
+    recommended_action: "Masukkan antrean review"
+
+  - code: "C4"
+    internal_name: "hate_speech_strong"
+    display_name: "Hate Speech Kuat"
+    definition: >
+      Ujaran kebencian ekstrem. Termasuk ancaman kekerasan, intimidasi,
+      rasisme, penistaan, radikalisme, atau ajakan membahayakan.
+    base_score: 4
+    display_order: 4
+    color_token: "danger"
+    recommended_action: "Prioritaskan review, simpan bukti, eskalasi"
+
+
+
+# Hierarchy priority — higher index = higher severity
+hierarchy_priority:
+  - "normal"
+  - "abusive"
+  - "hate_speech_weak"
+  - "hate_speech_moderate"
+  - "hate_speech_strong"
+
+# Internal name to code mapping
+label_to_code:
+  normal: "C0"
+  abusive: "C1"
+  hate_speech_weak: "C2"
+  hate_speech_moderate: "C3"
+  hate_speech_strong: "C4"
+
+
+# Training labels only (excludes C5 / uncertain)
+training_labels:
+  - "normal"
+  - "abusive"
+  - "hate_speech_weak"
+  - "hate_speech_moderate"
+  - "hate_speech_strong"

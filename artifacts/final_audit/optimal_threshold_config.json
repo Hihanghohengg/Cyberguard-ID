@@ -1,0 +1,13 @@
+{
+  "selected_tau_confident": 0.8,
+  "selected_tau_accepted": 0.6,
+  "selected_tau_review": 0.45,
+  "selected_margin_threshold": 0.06,
+  "validation_set_metrics": {
+    "auto_coverage_pct": 78.45,
+    "abstention_rate_pct": 21.55,
+    "automated_accuracy_pct": 89.01,
+    "high_risk_automated_recall_pct": 91.25
+  },
+  "rationale": "Threshold tau_review=0.45 and margin=0.06 achieves optimal balance: preserves >91% high-risk recall on automated predictions while maintaining human review volume under 22%, well within operational limits."
+}

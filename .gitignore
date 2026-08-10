@@ -1,0 +1,72 @@
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model artifacts (large files)
+models/*.joblib
+models/*.pkl
+models/indobert_cyberguard/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Database
+artifacts/*.db
+data/*.db
+data/raw_sources/
+
+# Logs
+artifacts/logs/*.log
+
+# Generated reports
+artifacts/reports/*
+!artifacts/reports/.gitkeep
+artifacts/predictions/*
+!artifacts/predictions/.gitkeep
+artifacts/evaluations/*
+!artifacts/evaluations/.gitkeep
+
+# Data (raw/processed)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Pytest
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Ruff
+.ruff_cache/
+
+# Misc
+*.bak
+*.tmp

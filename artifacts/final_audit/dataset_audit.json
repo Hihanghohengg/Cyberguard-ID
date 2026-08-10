@@ -1,0 +1,136 @@
+{
+  "dataset_name": "CyberGuard-ID Multi-Source Authentic Indonesian Dataset",
+  "sources": [
+    {
+      "id": "ibrohim_budi_2019",
+      "name": "Indonesian Multi-label Hate Speech and Abusive Language Dataset",
+      "paper_title": "Multi-label Hate Speech and Abusive Language Detection in Indonesian Twitter",
+      "authors": "Muhammad Okky Ibrohim, Indra Budi",
+      "institution": "Faculty of Computer Science, Universitas Indonesia",
+      "year": 2019,
+      "conference": "Proceedings of the Third Workshop on Abusive Language Online (ALW3 @ ACL 2019)",
+      "doi": "10.18653/v1/W19-3515",
+      "repository_url": "https://github.com/okkyibrohim/id-multi-label-hate-speech-and-abusive-language-detection",
+      "raw_download_url": "https://raw.githubusercontent.com/okkyibrohim/id-multi-label-hate-speech-and-abusive-language-detection/master/re_dataset.csv",
+      "filename": "re_dataset.csv",
+      "license": "Research and Academic Use / MIT"
+    },
+    {
+      "id": "alfina_et_al_2017",
+      "name": "Indonesian Hate Speech Detection Dataset",
+      "paper_title": "Hate Speech Detection in the Indonesian Language on Social Media",
+      "authors": "Ika Alfina, Rio Mulia, Mochamad Ivan Fanany, Yudo Ekanata",
+      "institution": "Faculty of Computer Science, Universitas Indonesia",
+      "year": 2017,
+      "conference": "2017 International Conference on Information Technology, Computer, and Electrical Engineering (ICITACEE)",
+      "doi": "10.1109/ICITACEE.2017.8257690",
+      "repository_url": "https://github.com/ialfina/id-hatespeech-detection",
+      "raw_download_url": "https://raw.githubusercontent.com/ialfina/id-hatespeech-detection/master/IDHSD_RIO_unbalanced_713_2017.txt",
+      "filename": "IDHSD_RIO_unbalanced_713_2017.txt",
+      "license": "Research and Academic Use / CC BY-NC-SA 4.0"
+    },
+    {
+      "id": "indonlu_smsa_2020",
+      "name": "IndoNLU SmSA (Sentiment Analysis Prosa)",
+      "paper_title": "IndoNLU: Benchmark and Resources for Evaluating Indonesian Natural Language Understanding",
+      "authors": "Bryan Wilie, Karissa Vincentio, Genta Indra Winata, et al.",
+      "institution": "IndoBenchmark / Institut Teknologi Bandung / HKUST",
+      "year": 2020,
+      "conference": "Proceedings of the 1st Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (AACL-IJCNLP 2020)",
+      "doi": "10.18653/v1/2020.aacl-main.85",
+      "repository_url": "https://github.com/indobenchmark/indonlu",
+      "raw_download_url": "https://raw.githubusercontent.com/indobenchmark/indonlu/master/dataset/smsa_doc-sentiment-prosa/train_preprocess.tsv",
+      "filename": "train_preprocess.tsv",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "total_samples": 12719,
+  "class_distribution": {
+    "normal": 5700,
+    "hate_speech_weak": 3224,
+    "hate_speech_moderate": 1672,
+    "abusive": 1656,
+    "hate_speech_strong": 467
+  },
+  "splits": {
+    "train": 8903,
+    "val": 1908,
+    "test": 1908
+  },
+  "synthetic_data_evidence": {
+    "is_pure_ai_synthetic": false,
+    "is_authentic_human_corpus": true,
+    "samples_with_natural_slang_count": 4150,
+    "samples_with_natural_slang_ratio": 0.3263,
+    "source_breakdown": {
+      "ibrohim_2019": 12719
+    }
+  },
+  "exact_duplicates": {
+    "count": 0,
+    "details": []
+  },
+  "random_samples_per_class": {
+    "abusive": [
+      "Karena cinta hasil menikung adalah terkutuk.'",
+      "SINTING baca dimana? :('",
+      "Ngambang kaya tai jir'",
+      "Tai wkwkw nyesel kan lu'",
+      "pernah, bentuknya mirip titit bocah tk'",
+      "hahahahaha tai cuk'",
+      "Kalobaan mikir kos menteri wae si edan'",
+      "Waini kurang minum kopi luwak biar gak deg2an alias kocak si pak bolotnya pas depan congor \\xf0\\x9f\\x98\\xb9\\xf0\\x9f\\x98\\x82'",
+      "Sayangnya yg lebih baik juga blom ada Blom ada yg bisa gantiin pakde jokowi Ojo tambah edan lho jon RSJ kebak wisan'",
+      "Nah lho....? Gw sih bodo amat, mo jungkir balik kek bodo amat,,, harus instropeksi diri dan mawas diri. apa dan kenapa...? T\\xe2\\x80\\xa6'"
+    ],
+    "hate_speech_moderate": [
+      "Eh toilet fifis onta melipir lagi. Ini di indonesia lho, gerombolan lu mabok budaya arab jd nya kayak gitu \\xf0\\x9f\\x98\\x82'",
+      "Hanya Orang Islam Yang Bodoh dan Goblok Yang Memilik Ahok! DebatFinalPilkadaJKT",
+      "Xl kunyuk balik ke as lah taikk'",
+      "Bwahahahhahha.....antek asing...lo pikir lo bisa kaya dengan memisahkan diri dr Indonesia....jd antek pengeruk bumi iya...lo mah palibg dianggap jongos Dasar mental penjilat lo pada!'",
+      "Rejim yg membuat E KTP itu Rejim SBY.. jangan pura-pura lupa.. Yg dipenjara juga Partainya SBY",
+      "Jangan serahkan nasib Bangsa ini kepada orang-orang yg mengabdi (meng-kacungkan diri) ke cukong-cukong aseng pengkhianat NKRI yg jadi pemodal dana kampanye mereka. #2019GantiPresiden'",
+      "Cebong dan bani bumi datar.'",
+      "Eh ada wartawan Selandia Baru Rasa Kampret dan dibuat berita oleh Kampret disebar di WAG. Konferensi Pers tdk dilakukan\\xe2\\x80\\xa6'",
+      "Ayo gelorakan #2019GantiPresiden, insya Allah kesejahteraan merata. Komunis lenyap.",
+      "Iyaa komunitas muslim &amp; budha bareng2 sediain makanan buat rescuers nya jg. Di saat disini hal apapun dijadiin panggung politik.'"
+    ],
+    "hate_speech_strong": [
+      "Bubarkan KPK.... jika tdk juga buat SOP PENYADAPAN sesuai keputusan MK..",
+      "Sangat Setuju Sekali! Bangsa Indonesia butuh sbg seorang pahlawan nasionalis yg mengajarkan kita untuk mencintai NKRI. Para kaum radikalis pecinta kencing onta biadab ini hrs disingkirkan! Kerjaan rad",
+      "BUBARKAN ILUNI UI",
+      "Bubarkan HTI yg ditangkap KPK.....",
+      "Grafiknya di posisi papa minta saham dan bubarkan kpk URL",
+      "Iyaa... Ahog Ngak pantes jadi pemimpin.. Pantesnya penista agama dipenjarakan!!! https:\\/\\/t.co\\/YhhO40QWXS",
+      "Tugas umat Islam Indonesia masih berat; tegakkan hukum atau lengserkan jokowi.",
+      "Bubarkan HTI &amp; FPI. URL",
+      "Se7. Jokowi hrs berani. LENGSERKAN Gatot. JokowiAgain",
+      "Ganyang pki!! Waspada bahaya latennya!!"
+    ],
+    "hate_speech_weak": [
+      "Sinting kah km ini bos yg mo bubarkan kpk siapa klo bkn km dan orang-orangmu",
+      "GAPERNAH MENDALAMI AL-QURAN YA BANG??? PANTESAN MULUTNYA KAYA ORANG KAFIR BEJAT HINA '",
+      "Selalu inget, km bukan siapa siapa. Bukan apa apa. Jadi gaada pentingnya juga buat kamu tau. But, I need belong to someone. Hahaha. Agony of loneliness huh? Teori nya pak kassin lagi nih? Geblek!'",
+      "Gue: \"Nape kalian mau baju #2019GantiPresiden ?\"; A: \"kita mau naik gaji aja mesti demo berminggu2...nah presiden enak aja malah bikin perpres tenaga kerja asing\"; B: \"kita bisa kapan saja di PHK, terus nganggur. Nah tenaga asing enak bener\"; C: Ganti pres",
+      "Apa mentang2 didanai kafir? Apa mentang2 aparat pro?'",
+      "Bencong macem Ivan lo percaya...hadeuhh kaka ny jd pelakor aja bangga ... yaiyalah dia blg idup gosah jujur2 amat, dese hobi boboin lekong mulu saban ke bali'",
+      "Setujuuuu banget Jokowi mundur uda bosen ngeliatnye",
+      "dia mengaku Presiden indonesia.. padahal pembela penjajah Cina..",
+      "jujur orang cerdas dan pintar pilih orang imam dan mampu memimpin ..bisa sholat...bisa ngaji..santun, sopan..tidak seperti babi kafir ahok",
+      "MATAMU PICEK A? Duit gak ada maksa beli, hutang belum release baru mau disiapkan 11 bank sudah koar2. Entar waktu bayar dana gak ada jawabnya \" BUKAN URUSAN SAYA \". DUNGU PLUS KOPLAK diambil semua'"
+    ],
+    "normal": [
+      "\\xe3\\x85\\xa4 ... dari tubuhku yang kurus ini. walau masih muda orang itu memiliki punggung yang sudah terlihat tegap dan lebar. matanya sipit dengan dua tanda di kelopaknya dan garis wajahnya terlihat menggambarkan watak galak. (cont.)'",
+      "Masih kepikiran juga sama air mineral yg tadi pagi baru diminum dikit pas nyetir tapi ngga sempet habisin karna kebelet eek yg akhirnya keburu imsak.'",
+      "\\xe2\\x80\\x9cYang kedua saya lihat juga bagus jambanisasi tadi, membikin jamban-jamban keluarga kurang lebih 2 juta per jamban tadi baru dikerjakan di 30 KK, 30 jamban. Ini juga membangun sebuah sanitasi yang baik bagi keluarga, kesehatan lingkungan di ka",
+      "Tomohon juga merupakan pusat pembelajaran agama Kristen dan Katolik. Ada tempat khusus untuk berdoa dan meditasi yang disebut Bukit Kasih, sebuah tempat suci yang indah dan tenang. #TomohonInternationalFlowerFestival Nor'",
+      "Jadi inget dulu rela telponan ber-jam-jam sampe kehabisan topik tapi tetep telponan supaya dia bisa denger w\\xe2\\x80\\xa6'",
+      "#PopulerB1 #Ekonomi: Jokowi Tetapkan 222 Proyek Strategis Senilai Rp 4.100 T",
+      "Dia hanya Teman Mainku Sewaktu Kecil dan Cinta Demikian Tidak Masuk Kedalam Hati, Kata Orang Cinta Seperti ini adalah Cinta Monyet.'",
+      "Agenda Yahudi. Hati2 semua'",
+      "4. Hal ketiga yang ingin dibahas Presiden dalam #ratas kali ini yakni sisi promosi untuk #AsianGames2018, baik di media-media lokal maupun di media-media internasional.",
+      "\"Keanekaragaman budaya, suku, agama, itulah sesungguhnya kekayaan kita,\u00e2?? tutur Djarot di hadapan peserta Rakercabsus Kota Gunungsitoli.; ; #GubernurZamanNow ; #DjarotSihar2 ; #SumutPilih2Djoss #DjarotSiharMenang #GunungSitoli #PDIPerjuanga"
+    ]
+  },
+  "timestamp": "2026-08-10T07:01:49.886751+00:00"
+}

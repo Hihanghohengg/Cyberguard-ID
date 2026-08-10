@@ -1,0 +1,81 @@
+# CyberGuard-ID — Threshold Configuration
+
+confidence:
+  highly_confident: 0.85
+  accepted: 0.65
+  mandatory_review: 0.40
+  minimum_margin: 0.05
+  strong_margin: 0.15
+
+# Verification status rules
+verification:
+  model_verified:
+    min_confidence: 0.85
+    min_margin: 0.15
+  recommended_review:
+    min_confidence: 0.65
+    max_confidence: 0.85
+    min_margin: 0.05
+  mandatory_review:
+    min_confidence: 0.40
+    max_confidence: 0.65
+  uncertain:
+    max_confidence: 0.40
+    max_margin: 0.05
+
+# Risk scoring
+risk:
+  base_scores:
+    normal: 0
+    abusive: 1
+    hate_speech_weak: 2
+    hate_speech_moderate: 3
+    hate_speech_strong: 4
+
+  additional_scores:
+    target_individual_detected: 1
+    target_minor_suspected: 1
+    repeated_harmful_comments_min_3: 1
+    unique_authors_min_3: 1
+    incitement_to_attack: 2
+    doxxing_indicator: 2
+
+  levels:
+    low:
+      min: 0
+      max: 1
+    medium:
+      min: 2
+      max: 3
+    high:
+      min: 4
+      max: 5
+    critical:
+      min: 6
+
+# Repetition detection
+repetition:
+  similarity_threshold: 0.80
+  minimum_harmful_comments: 3
+  minimum_unique_authors: 3
+  time_window_hours: 24
+
+# Indication levels for cyberbullying assessment
+indication_levels:
+  none:
+    label: "Tidak Terindikasi"
+    harmful_count: 0
+  early:
+    label: "Indikasi Awal Harassment"
+    min_harmful: 1
+    max_harmful: 2
+  moderate:
+    label: "Indikasi Cyberbullying Sedang"
+    min_harmful: 3
+  strong:
+    label: "Indikasi Cyberbullying Kuat"
+    min_harmful: 5
+    min_unique_authors: 3
+  critical:
+    label: "Indikasi Kritis"
+    has_threats_or_doxxing: true

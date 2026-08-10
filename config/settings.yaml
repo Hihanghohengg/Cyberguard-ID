@@ -1,0 +1,55 @@
+# CyberGuard-ID — Application Settings
+
+app:
+  name: "CyberGuard-ID"
+  version: "1.0.0"
+  description: >
+    Aplikasi skrining dan prioritisasi moderasi komentar YouTube
+    berbahasa Indonesia dengan model IndoBERT.
+
+# YouTube data collection
+youtube:
+  default_max_comments: 500
+  maximum_allowed_comments: 5000
+  include_replies: true
+  page_size: 100
+
+# Paths
+paths:
+  database: "artifacts/cyberguard.db"
+  model: "models/moderation_pipeline.joblib"
+  model_metadata: "models/model_metadata.json"
+  artifacts: "artifacts"
+  reports: "artifacts/reports"
+  predictions: "artifacts/predictions"
+  evaluations: "artifacts/evaluations"
+  logs: "artifacts/logs"
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  data_sample: "data/sample"
+
+# Privacy
+privacy:
+  store_original_username: false
+  anonymize_authors: true
+  anonymization_method: "salted_sha256"
+
+# Gemini
+gemini:
+  enabled: true
+  temperature: 0.2
+  max_retries: 3
+  timeout_seconds: 30
+
+# Report
+report:
+  include_raw_text: true
+  max_findings_in_summary: 10
+  html_template: "templates/report.html"
+
+# Upload limits
+upload:
+  max_file_size_mb: 50
+  allowed_extensions:
+    - ".csv"
+  max_rows: 10000

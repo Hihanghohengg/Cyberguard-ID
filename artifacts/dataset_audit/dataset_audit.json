@@ -1,0 +1,178 @@
+{
+    "encoding": "latin-1 or utf-8",
+    "total_rows": 13169,
+    "total_columns": 13,
+    "columns": [
+        "Tweet",
+        "HS",
+        "Abusive",
+        "HS_Individual",
+        "HS_Group",
+        "HS_Religion",
+        "HS_Race",
+        "HS_Physical",
+        "HS_Gender",
+        "HS_Other",
+        "HS_Weak",
+        "HS_Moderate",
+        "HS_Strong"
+    ],
+    "dtypes": {
+        "Tweet": "object",
+        "HS": "int64",
+        "Abusive": "int64",
+        "HS_Individual": "int64",
+        "HS_Group": "int64",
+        "HS_Religion": "int64",
+        "HS_Race": "int64",
+        "HS_Physical": "int64",
+        "HS_Gender": "int64",
+        "HS_Other": "int64",
+        "HS_Weak": "int64",
+        "HS_Moderate": "int64",
+        "HS_Strong": "int64"
+    },
+    "missing_values": {
+        "Tweet": 0,
+        "HS": 0,
+        "Abusive": 0,
+        "HS_Individual": 0,
+        "HS_Group": 0,
+        "HS_Religion": 0,
+        "HS_Race": 0,
+        "HS_Physical": 0,
+        "HS_Gender": 0,
+        "HS_Other": 0,
+        "HS_Weak": 0,
+        "HS_Moderate": 0,
+        "HS_Strong": 0
+    },
+    "duplicate_tweets": 146,
+    "sample_data": [
+        {
+            "Tweet": "- disaat semua cowok berusaha melacak perhatian gue. loe lantas remehkan perhatian yg gue kasih khusus ke elo. basic elo cowok bego ! ! !'",
+            "HS": 1,
+            "Abusive": 1,
+            "HS_Individual": 1,
+            "HS_Group": 0,
+            "HS_Religion": 0,
+            "HS_Race": 0,
+            "HS_Physical": 0,
+            "HS_Gender": 0,
+            "HS_Other": 1,
+            "HS_Weak": 1,
+            "HS_Moderate": 0,
+            "HS_Strong": 0
+        },
+        {
+            "Tweet": "RT USER: USER siapa yang telat ngasih tau elu?edan sarap gue bergaul dengan cigax jifla calis sama siapa noh licew juga'",
+            "HS": 0,
+            "Abusive": 1,
+            "HS_Individual": 0,
+            "HS_Group": 0,
+            "HS_Religion": 0,
+            "HS_Race": 0,
+            "HS_Physical": 0,
+            "HS_Gender": 0,
+            "HS_Other": 0,
+            "HS_Weak": 0,
+            "HS_Moderate": 0,
+            "HS_Strong": 0
+        },
+        {
+            "Tweet": "41. Kadang aku berfikir, kenapa aku tetap percaya pada Tuhan padahal aku selalu jatuh berkali-kali. Kadang aku merasa Tuhan itu ninggalkan aku sendirian. Ketika orangtuaku berencana berpisah, ketika kakakku lebih memilih jadi Kristen. Ketika aku anak ter",
+            "HS": 0,
+            "Abusive": 0,
+            "HS_Individual": 0,
+            "HS_Group": 0,
+            "HS_Religion": 0,
+            "HS_Race": 0,
+            "HS_Physical": 0,
+            "HS_Gender": 0,
+            "HS_Other": 0,
+            "HS_Weak": 0,
+            "HS_Moderate": 0,
+            "HS_Strong": 0
+        },
+        {
+            "Tweet": "USER USER AKU ITU AKU\\n\\nKU TAU MATAMU SIPIT TAPI DILIAT DARI MANA ITU AKU'",
+            "HS": 0,
+            "Abusive": 0,
+            "HS_Individual": 0,
+            "HS_Group": 0,
+            "HS_Religion": 0,
+            "HS_Race": 0,
+            "HS_Physical": 0,
+            "HS_Gender": 0,
+            "HS_Other": 0,
+            "HS_Weak": 0,
+            "HS_Moderate": 0,
+            "HS_Strong": 0
+        },
+        {
+            "Tweet": "USER USER Kaum cebong kapir udah keliatan dongoknya dari awal tambah dongok lagi hahahah'",
+            "HS": 1,
+            "Abusive": 1,
+            "HS_Individual": 0,
+            "HS_Group": 1,
+            "HS_Religion": 1,
+            "HS_Race": 0,
+            "HS_Physical": 0,
+            "HS_Gender": 0,
+            "HS_Other": 0,
+            "HS_Weak": 0,
+            "HS_Moderate": 1,
+            "HS_Strong": 0
+        }
+    ],
+    "label_distribution": {
+        "HS": {
+            "0": 7608,
+            "1": 5561
+        },
+        "Abusive": {
+            "0": 8126,
+            "1": 5043
+        },
+        "HS_Individual": {
+            "0": 9594,
+            "1": 3575
+        },
+        "HS_Group": {
+            "0": 11183,
+            "1": 1986
+        },
+        "HS_Religion": {
+            "0": 12376,
+            "1": 793
+        },
+        "HS_Race": {
+            "0": 12603,
+            "1": 566
+        },
+        "HS_Physical": {
+            "0": 12846,
+            "1": 323
+        },
+        "HS_Gender": {
+            "0": 12863,
+            "1": 306
+        },
+        "HS_Other": {
+            "0": 9429,
+            "1": 3740
+        },
+        "HS_Weak": {
+            "0": 9786,
+            "1": 3383
+        },
+        "HS_Moderate": {
+            "0": 11464,
+            "1": 1705
+        },
+        "HS_Strong": {
+            "0": 12696,
+            "1": 473
+        }
+    }
+}

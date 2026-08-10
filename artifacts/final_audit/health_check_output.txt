@@ -1,0 +1,21 @@
+
+  +======================================+
+  |         [#] CyberGuard-ID            |
+  |  Moderasi Komentar YouTube Indonesia  |
+  +======================================+
+
+[OK] Python 3.11.9
+[OK] Virtual environment exists
+[OK] Dependencies up to date
+[OK] .env file exists
+[OK] Directory structure ready
+[OK] Configuration files valid
+[OK] Database initialized
+[OK] Model available (v1.0.0, 0.9MB)
+
+API Keys:
+  YouTube API: [-] Not configured (CSV mode only)
+  Gemini API:  [-] Not configured (local templates)
+  [WARN] ANONYMIZATION_SALT is still default - change it in .env
+
+[OK] System check complete

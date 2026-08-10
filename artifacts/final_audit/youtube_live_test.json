@@ -1,0 +1,17 @@
+{
+  "status": "NOT_VERIFIED",
+  "reason": "YOUTUBE_API_KEY is not configured in environment or .env file",
+  "api_key_configured": false,
+  "url_parser_validation": {
+    "tested_patterns": 3,
+    "passed_patterns": 3,
+    "pattern_details": {
+      "https://www.youtube.com/watch?v=dQw4w9WgXcQ": "dQw4w9WgXcQ",
+      "https://youtu.be/dQw4w9WgXcQ": "dQw4w9WgXcQ",
+      "https://www.youtube.com/shorts/abcdefghijk": "abcdefghijk"
+    }
+  },
+  "graceful_fallback_verified": true,
+  "fallback_behavior": "System displays configuration alert in UI and directs user to CSV upload without crashing.",
+  "timestamp": "2026-08-05T02:53:33.594871+00:00"
+}

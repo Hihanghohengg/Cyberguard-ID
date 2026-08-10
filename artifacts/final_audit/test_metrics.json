@@ -1,0 +1,219 @@
+{
+  "evaluation_dataset": "untouched_test_set",
+  "test_sample_count": 231,
+  "overall_metrics": {
+    "accuracy": 0.6883,
+    "macro_precision": 0.6989,
+    "macro_recall": 0.6883,
+    "macro_f1": 0.688,
+    "weighted_f1": 0.688,
+    "average_confidence": 0.618
+  },
+  "high_severity_focus": {
+    "classes": [
+      "hate_speech",
+      "sexual_harassment",
+      "threat_intimidation"
+    ],
+    "metrics": {
+      "hate_speech": {
+        "precision": 0.6,
+        "recall": 0.7273,
+        "f1_score": 0.6575,
+        "support": 33
+      },
+      "sexual_harassment": {
+        "precision": 0.7429,
+        "recall": 0.7879,
+        "f1_score": 0.7647,
+        "support": 33
+      },
+      "threat_intimidation": {
+        "precision": 0.9231,
+        "recall": 0.7273,
+        "f1_score": 0.8136,
+        "support": 33
+      }
+    },
+    "average_recall": 0.7475
+  },
+  "calibration_audit": {
+    "is_calibrated_classifier": true,
+    "calibration_method": "sigmoid",
+    "overall_brier_score": 0.0594,
+    "brier_scores_by_class": {
+      "bahasa_kasar": 0.0712,
+      "hate_speech": 0.0708,
+      "kritik_wajar": 0.0569,
+      "normal_konstruktif": 0.0385,
+      "personal_harassment": 0.0915,
+      "sexual_harassment": 0.0477,
+      "threat_intimidation": 0.0393
+    },
+    "proof_of_calibration": "Pipeline utilizes sklearn.calibration.CalibratedClassifierCV(estimator=LinearSVC(), method='sigmoid', cv=5)."
+  },
+  "5fold_cross_validation": {
+    "n_splits": 5,
+    "mean_accuracy": 0.6990085110116697,
+    "std_accuracy": 0.02215012061828149,
+    "mean_macro_f1": 0.6998731570069647,
+    "std_macro_f1": 0.02062797527740973,
+    "mean_weighted_f1": 0.6999596592031662,
+    "std_weighted_f1": 0.020308002037546544,
+    "mean_macro_recall": 0.6989636252794148,
+    "std_macro_recall": 0.022498227009556993,
+    "mean_macro_precision": 0.7045291599302386,
+    "std_macro_precision": 0.018702830820388417,
+    "fold_details": [
+      {
+        "fold": 1,
+        "accuracy": 0.6908,
+        "macro_f1": 0.6907,
+        "weighted_f1": 0.6917
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.6985,
+        "macro_f1": 0.6967,
+        "weighted_f1": 0.697
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.7366,
+        "macro_f1": 0.7365,
+        "weighted_f1": 0.7357
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.6679,
+        "macro_f1": 0.6737,
+        "weighted_f1": 0.6735
+      },
+      {
+        "fold": 5,
+        "accuracy": 0.7011,
+        "macro_f1": 0.7017,
+        "weighted_f1": 0.7019
+      }
+    ]
+  },
+  "per_class_metrics": {
+    "bahasa_kasar": {
+      "precision": 0.5946,
+      "recall": 0.6667,
+      "f1_score": 0.6286,
+      "support": 33
+    },
+    "hate_speech": {
+      "precision": 0.6,
+      "recall": 0.7273,
+      "f1_score": 0.6575,
+      "support": 33
+    },
+    "kritik_wajar": {
+      "precision": 0.6154,
+      "recall": 0.7273,
+      "f1_score": 0.6667,
+      "support": 33
+    },
+    "normal_konstruktif": {
+      "precision": 0.8333,
+      "recall": 0.7576,
+      "f1_score": 0.7937,
+      "support": 33
+    },
+    "personal_harassment": {
+      "precision": 0.5833,
+      "recall": 0.4242,
+      "f1_score": 0.4912,
+      "support": 33
+    },
+    "sexual_harassment": {
+      "precision": 0.7429,
+      "recall": 0.7879,
+      "f1_score": 0.7647,
+      "support": 33
+    },
+    "threat_intimidation": {
+      "precision": 0.9231,
+      "recall": 0.7273,
+      "f1_score": 0.8136,
+      "support": 33
+    }
+  },
+  "confusion_matrix": [
+    [
+      22,
+      1,
+      2,
+      1,
+      2,
+      5,
+      0
+    ],
+    [
+      3,
+      24,
+      1,
+      0,
+      4,
+      0,
+      1
+    ],
+    [
+      1,
+      3,
+      24,
+      4,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      7,
+      25,
+      1,
+      0,
+      0
+    ],
+    [
+      7,
+      4,
+      3,
+      0,
+      14,
+      4,
+      1
+    ],
+    [
+      3,
+      1,
+      2,
+      0,
+      1,
+      26,
+      0
+    ],
+    [
+      1,
+      7,
+      0,
+      0,
+      1,
+      0,
+      24
+    ]
+  ],
+  "classes": [
+    "bahasa_kasar",
+    "hate_speech",
+    "kritik_wajar",
+    "normal_konstruktif",
+    "personal_harassment",
+    "sexual_harassment",
+    "threat_intimidation"
+  ],
+  "timestamp": "2026-08-05T02:52:46.680310+00:00"
+}

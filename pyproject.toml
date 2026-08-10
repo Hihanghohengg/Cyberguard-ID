@@ -1,0 +1,34 @@
+[project]
+name = "cyberguard-id"
+version = "1.0.0"
+description = "Skrining dan prioritisasi moderasi komentar YouTube berbahasa Indonesia"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+fix = true
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM"]
+ignore = ["E501", "N806", "N803", "B008"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["E402"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.pyrefly]
+search-path = ["."]
+disable-search-path-heuristics = true
+
+[tool.pyright]
+extraPaths = ["."]
+

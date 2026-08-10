@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ibrohim_budi_2019",
+    "name": "Indonesian Multi-label Hate Speech and Abusive Language Dataset",
+    "paper_title": "Multi-label Hate Speech and Abusive Language Detection in Indonesian Twitter",
+    "authors": "Muhammad Okky Ibrohim, Indra Budi",
+    "institution": "Faculty of Computer Science, Universitas Indonesia",
+    "year": 2019,
+    "conference": "Proceedings of the Third Workshop on Abusive Language Online (ALW3 @ ACL 2019)",
+    "doi": "10.18653/v1/W19-3515",
+    "repository_url": "https://github.com/okkyibrohim/id-multi-label-hate-speech-and-abusive-language-detection",
+    "raw_download_url": "https://raw.githubusercontent.com/okkyibrohim/id-multi-label-hate-speech-and-abusive-language-detection/master/re_dataset.csv",
+    "filename": "re_dataset.csv",
+    "license": "Research and Academic Use / MIT"
+  },
+  {
+    "id": "alfina_et_al_2017",
+    "name": "Indonesian Hate Speech Detection Dataset",
+    "paper_title": "Hate Speech Detection in the Indonesian Language on Social Media",
+    "authors": "Ika Alfina, Rio Mulia, Mochamad Ivan Fanany, Yudo Ekanata",
+    "institution": "Faculty of Computer Science, Universitas Indonesia",
+    "year": 2017,
+    "conference": "2017 International Conference on Information Technology, Computer, and Electrical Engineering (ICITACEE)",
+    "doi": "10.1109/ICITACEE.2017.8257690",
+    "repository_url": "https://github.com/ialfina/id-hatespeech-detection",
+    "raw_download_url": "https://raw.githubusercontent.com/ialfina/id-hatespeech-detection/master/IDHSD_RIO_unbalanced_713_2017.txt",
+    "filename": "IDHSD_RIO_unbalanced_713_2017.txt",
+    "license": "Research and Academic Use / CC BY-NC-SA 4.0"
+  },
+  {
+    "id": "indonlu_smsa_2020",
+    "name": "IndoNLU SmSA (Sentiment Analysis Prosa)",
+    "paper_title": "IndoNLU: Benchmark and Resources for Evaluating Indonesian Natural Language Understanding",
+    "authors": "Bryan Wilie, Karissa Vincentio, Genta Indra Winata, et al.",
+    "institution": "IndoBenchmark / Institut Teknologi Bandung / HKUST",
+    "year": 2020,
+    "conference": "Proceedings of the 1st Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (AACL-IJCNLP 2020)",
+    "doi": "10.18653/v1/2020.aacl-main.85",
+    "repository_url": "https://github.com/indobenchmark/indonlu",
+    "raw_download_url": "https://raw.githubusercontent.com/indobenchmark/indonlu/master/dataset/smsa_doc-sentiment-prosa/train_preprocess.tsv",
+    "filename": "train_preprocess.tsv",
+    "license": "CC BY-SA 4.0"
+  }
+]

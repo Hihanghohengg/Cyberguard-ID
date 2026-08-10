@@ -1,0 +1,235 @@
+{
+  "status": "LEAKAGE_DETECTED",
+  "split_counts": {
+    "train": 8903,
+    "val": 1908,
+    "test": 1908,
+    "total": 12719
+  },
+  "exact_leakage": {
+    "train_val_overlap": 0,
+    "train_test_overlap": 0,
+    "val_test_overlap": 0
+  },
+  "near_duplicate_leakage_count": 30,
+  "near_duplicate_leakage_samples": [
+    {
+      "test_idx": 191,
+      "train_idx": 413,
+      "similarity": 0.8929,
+      "test_text": "Sorre gengss; Warga Baduy setelah selesai memperingati tradi",
+      "train_text": "Rtn,; Warga Baduy setelah selesai memperingati tradisi Seba "
+    },
+    {
+      "test_idx": 191,
+      "train_idx": 729,
+      "similarity": 0.8571,
+      "test_text": "Sorre gengss; Warga Baduy setelah selesai memperingati tradi",
+      "train_text": "\u00f0???\u00f0??\u00a5Warga Baduy setelah selesai memperingati tradisi Seb"
+    },
+    {
+      "test_idx": 191,
+      "train_idx": 1943,
+      "similarity": 0.8621,
+      "test_text": "Sorre gengss; Warga Baduy setelah selesai memperingati tradi",
+      "train_text": "Warga Baduy setelah selesai memperingati tradisi Seba di Pen"
+    },
+    {
+      "test_idx": 191,
+      "train_idx": 5447,
+      "similarity": 0.8929,
+      "test_text": "Sorre gengss; Warga Baduy setelah selesai memperingati tradi",
+      "train_text": ".BM\u00e2??: Warga Baduy setelah selesai memperingati tradisi Seb"
+    },
+    {
+      "test_idx": 191,
+      "train_idx": 5768,
+      "similarity": 0.8929,
+      "test_text": "Sorre gengss; Warga Baduy setelah selesai memperingati tradi",
+      "train_text": "[]&gt;&gt;&lt;&lt;&lt;; Warga Baduy setelah selesai memperin"
+    },
+    {
+      "test_idx": 191,
+      "train_idx": 8566,
+      "similarity": 0.8929,
+      "test_text": "Sorre gengss; Warga Baduy setelah selesai memperingati tradi",
+      "train_text": "\"...\" Warga Baduy setelah selesai memperingati tradisi Seba "
+    },
+    {
+      "test_idx": 191,
+      "train_idx": 8889,
+      "similarity": 0.8621,
+      "test_text": "Sorre gengss; Warga Baduy setelah selesai memperingati tradi",
+      "train_text": "#Genpi; _(SB2018)_; Warga Baduy setelah selesai memperingati"
+    },
+    {
+      "test_idx": 267,
+      "train_idx": 2850,
+      "similarity": 0.8667,
+      "test_text": "\"Pengetahuan tidak dapat menggantikan persahabatan. Aku (Pat",
+      "train_text": "pengetahuan tidak dapat menggantikan persahabatan. Aku (Patr"
+    },
+    {
+      "test_idx": 393,
+      "train_idx": 1602,
+      "similarity": 1.0,
+      "test_text": "1. Tidak Perih pada luka sariawan 2. Kemasanya Finger Off ya",
+      "train_text": "1. Tidak Perih pada Luka Sariawan 2. Kemasanya Finger Off ya"
+    },
+    {
+      "test_idx": 574,
+      "train_idx": 6496,
+      "similarity": 0.875,
+      "test_text": "Bawaslu: Kolaka Tertinggi Pelanggaran ASN Dalam Pilkada",
+      "train_text": "#AkuSeruji: Bawaslu: Kolaka Tertinggi Pelanggaran ASN Dalam "
+    },
+    {
+      "test_idx": 677,
+      "train_idx": 2616,
+      "similarity": 0.875,
+      "test_text": "#IKLANAHOKJAHAT AHOK MENCIPTAKAN BARA API ANTARA RAKYAT PRIB",
+      "train_text": "IKLANAHOKJAHAT AHOK MENCIPTAKAN BARA API ANTARA RAKYAT PRIBU"
+    },
+    {
+      "test_idx": 716,
+      "train_idx": 8774,
+      "similarity": 0.9048,
+      "test_text": "Ustadz Subki Al-Bughury, S. Sos.I saja mendukung Pilkada Dam",
+      "train_text": "Ustadz Subki Al-Bughury, S. Sos.I saja mendukung Pilkada Dam"
+    },
+    {
+      "test_idx": 864,
+      "train_idx": 5591,
+      "similarity": 0.9062,
+      "test_text": "Dalam PP baru itu, pemerintah menegaskan ketentuan bahwa pem",
+      "train_text": "Dalam PP baru itu, pemerintah menegaskan ketentuan bahwa pem"
+    },
+    {
+      "test_idx": 959,
+      "train_idx": 6814,
+      "similarity": 0.9143,
+      "test_text": "#kom3 menkumham : mengenai md3, memang benar hak imunitas it",
+      "train_text": "#kom3 menkumham : mengenai md3, memang benar hak imunitas it"
+    },
+    {
+      "test_idx": 959,
+      "train_idx": 7132,
+      "similarity": 0.9412,
+      "test_text": "#kom3 menkumham : mengenai md3, memang benar hak imunitas it",
+      "train_text": "#kom3 menkumham : mengenai md3, memang benar hak imunitas it"
+    },
+    {
+      "test_idx": 973,
+      "train_idx": 5890,
+      "similarity": 0.9583,
+      "test_text": "Bak kata orang Indonesia tu, kalau pelaburan luar tak wujudk",
+      "train_text": "Bak kata orang Indonesia tu, kalau pelaburan luar tak wujudk"
+    },
+    {
+      "test_idx": 993,
+      "train_idx": 1715,
+      "similarity": 0.8571,
+      "test_text": "GAPERNAH MENDALAMI AL-QURAN YA BANG??? PANTESAN MULUTNYA KAY",
+      "train_text": "GAPERNAH MENDALAMI AL-QURAN YA BANG??? PANTESAN MULUTNYA KAY"
+    },
+    {
+      "test_idx": 1100,
+      "train_idx": 4956,
+      "similarity": 0.8824,
+      "test_text": "Kanit Binmas Ipda Mt. Hutasoit melaks Sambang dan menyampaik",
+      "train_text": "\u00e2?\u00b6Pkl 09.15 wib ; Kanit Binmas Ipda Mt. Hutasoit melaks Sam"
+    },
+    {
+      "test_idx": 1137,
+      "train_idx": 6994,
+      "similarity": 0.9091,
+      "test_text": "Festival Pesona Tambora Angkat Eksotisme Alam dan Budaya Dom",
+      "train_text": "Festival Pesona Tambora Angkat Eksotisme Alam dan Budaya Dom"
+    },
+    {
+      "test_idx": 1139,
+      "train_idx": 3814,
+      "similarity": 0.8889,
+      "test_text": "pemerintahan Gus Ipul dan Puti ke depan akan memperkuat prog",
+      "train_text": "pemerintahan Gus Ipul dan Puti ke depan akan memperkuat prog"
+    },
+    {
+      "test_idx": 1205,
+      "train_idx": 8356,
+      "similarity": 1.0,
+      "test_text": "Jatim anti berita Hoax Pilkada Aman dan Damai",
+      "train_text": "Jatim Anti Berita Hoax Pilkada Aman dan Damai"
+    },
+    {
+      "test_idx": 1367,
+      "train_idx": 233,
+      "similarity": 0.9,
+      "test_text": "#JakartaBanjir Pemimpinnya gak punya akhlak yg baik... PENIS",
+      "train_text": "#JakartaBanjir Pemimpinnya gak punya akhlak yg baik... PENIS"
+    },
+    {
+      "test_idx": 1377,
+      "train_idx": 2613,
+      "similarity": 0.8571,
+      "test_text": "Besok kalau Prabowo nyapres lagi kalau masih teriak-teriak N",
+      "train_text": "Besok kalau Prabowo nyapres lagi kalau masih teriak-teriak N"
+    },
+    {
+      "test_idx": 1394,
+      "train_idx": 2271,
+      "similarity": 1.0,
+      "test_text": "TERORIS KAFIR BUDHA MYANMAR",
+      "train_text": "myanmar kafir budha teroris"
+    },
+    {
+      "test_idx": 1516,
+      "train_idx": 3920,
+      "similarity": 0.9,
+      "test_text": "Guru Privat di Koja TK SD SMP SMA UN Simak UI SBMPTN - Matem",
+      "train_text": "Guru Privat di Jakut TK SD SMP SMA UN Simak UI SBMPTN - Mate"
+    },
+    {
+      "test_idx": 1686,
+      "train_idx": 1067,
+      "similarity": 0.8571,
+      "test_text": "Pada Sabtu (21/4/2018) pagi, Masyarakat Adat Baduy akan kemb",
+      "train_text": "__-__; Pada Sabtu (21/4/2018) pagi, Masyarakat Adat Baduy ak"
+    },
+    {
+      "test_idx": 1686,
+      "train_idx": 2179,
+      "similarity": 0.8889,
+      "test_text": "Pada Sabtu (21/4/2018) pagi, Masyarakat Adat Baduy akan kemb",
+      "train_text": "Pada Sabtu (21/4/2018) pagi, Masyarakat Adat Baduy akan kemb"
+    },
+    {
+      "test_idx": 1686,
+      "train_idx": 6377,
+      "similarity": 0.9259,
+      "test_text": "Pada Sabtu (21/4/2018) pagi, Masyarakat Adat Baduy akan kemb",
+      "train_text": "Pada Sabtu (21/4/2018) pagi, Masyarakat Adat Baduy akan kemb"
+    },
+    {
+      "test_idx": 1897,
+      "train_idx": 6686,
+      "similarity": 0.8667,
+      "test_text": "Bagai Rumah Bawah Ranah Yang Indah Seorang Pendiam Dan Culun",
+      "train_text": "Bagai Rumah Bawah Ranah Yang Indah, Seorang Pendiam Dan Culu"
+    },
+    {
+      "test_idx": 1897,
+      "train_idx": 6940,
+      "similarity": 0.8667,
+      "test_text": "Bagai Rumah Bawah Ranah Yang Indah Seorang Pendiam Dan Culun",
+      "train_text": "bagai rumah bawah ranah yg indah seorang pendiam dan culun w"
+    }
+  ],
+  "class_distribution_test": {
+    "normal": 855,
+    "hate_speech_weak": 484,
+    "hate_speech_moderate": 251,
+    "abusive": 248,
+    "hate_speech_strong": 70
+  },
+  "timestamp": "2026-08-10T07:01:49.776618+00:00"
+}

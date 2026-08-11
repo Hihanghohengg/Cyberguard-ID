@@ -31,8 +31,6 @@ Thumbs.db
 # Model artifacts (large files)
 models/*.joblib
 models/*.pkl
-models/indobert_cyberguard/
-*.safetensors
 *.bin
 *.pt
 *.pth

@@ -181,3 +181,6 @@
 2026-08-11 09:08:47,626 | AUDIT | IP: 127.0.0.1 | Method: GET | Path: / | Status: 200 | Time: 1.00ms
 2026-08-11 09:09:15,929 | AUDIT | IP: 127.0.0.1 | Method: GET | Path: / | Status: 200 | Time: 2.07ms
 2026-08-11 09:09:59,804 | AUDIT | IP: 127.0.0.1 | Method: GET | Path: / | Status: 200 | Time: 124.92ms
+2026-08-11 09:14:10,128 | AUDIT | IP: 127.0.0.1 | Method: GET | Path: / | Status: 200 | Time: 0.00ms
+2026-08-11 09:14:10,461 | AUDIT | IP: 127.0.0.1 | Method: GET | Path: /api/analyses | Status: 200 | Time: 41.50ms
+2026-08-11 09:14:12,754 | AUDIT | IP: 127.0.0.1 | Method: GET | Path: /favicon.ico | Status: 404 | Time: 1.34ms

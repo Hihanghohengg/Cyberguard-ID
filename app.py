@@ -2,12 +2,10 @@ import os
 import uvicorn
 from server.main import app
 
-try:
-    import spaces
-    @spaces.GPU
-    def dummy_gpu_function():
-        pass
-except ImportError:
+import spaces
+
+@spaces.GPU
+def dummy_gpu_function():
     pass
 
 # Hugging Face Spaces (Gradio SDK) selalu mencari file app.py dan membuka port 7860.

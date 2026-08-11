@@ -35,7 +35,7 @@ app.add_middleware(SecurityMiddleware)
 # STRIDE: Strict CORS — allow local origins only to prevent SSRF/CSRF from external sites
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8000", "http://127.0.0.1:8000"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -67,6 +67,7 @@ if FRONTEND_DIR.exists():
 
 
 @app.get("/", include_in_schema=False)
+@app.get("/ui", include_in_schema=False)
 async def serve_index():
     """Serve the SPA index.html."""
     index_path = FRONTEND_DIR / "index.html"

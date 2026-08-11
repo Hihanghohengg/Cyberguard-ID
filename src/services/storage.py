@@ -692,6 +692,18 @@ class StorageService:
         if not row:
             return False
 
+        # Delete physical files
+        try:
+            reports = self.get_reports(analysis_id)
+            for r in reports:
+                for path_str in [r.html_path, r.csv_path, r.json_path]:
+                    if path_str:
+                        p = Path(path_str)
+                        if p.exists():
+                            p.unlink()
+        except Exception as e:
+            logger.error("Failed to delete physical files for %s: %s", analysis_id, e)
+
         # Cascade delete in strict order
         conn.execute(
             "DELETE FROM reviews WHERE comment_id IN (SELECT id FROM comments WHERE analysis_id = ?)",
@@ -722,6 +734,16 @@ class StorageService:
         conn = self._get_connection()
         count_row = conn.execute("SELECT COUNT(*) as cnt FROM analysis_runs").fetchone()
         count = count_row["cnt"] if count_row else 0
+
+        # Delete physical files in artifacts/reports
+        try:
+            reports_dir = self.db_path.parent / "reports"
+            if reports_dir.exists() and reports_dir.is_dir():
+                import shutil
+                shutil.rmtree(reports_dir)
+                reports_dir.mkdir(parents=True, exist_ok=True)
+        except Exception as e:
+            logger.error("Failed to clear physical reports: %s", e)
 
         conn.execute("DELETE FROM reviews")
         conn.execute("DELETE FROM cluster_members")

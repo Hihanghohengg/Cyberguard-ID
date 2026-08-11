@@ -1,13 +1,3 @@
----
-title: CyberGuard ID App
-emoji: 🛡️
-colorFrom: blue
-colorTo: indigo
-sdk: gradio
-app_port: 7860
-pinned: false
----
-
 # CyberGuard-ID
 
 **Platform Skrining dan Prioritisasi Moderasi Komentar YouTube Indonesia Berbasis AI/ML (Production-Ready Architecture).**

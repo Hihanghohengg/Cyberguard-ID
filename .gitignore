@@ -70,3 +70,7 @@ htmlcov/
 # Misc
 *.bak
 *.tmp
+
+artifacts/*.db-wal
+artifacts/*.db-shm
+artifacts/final_audit/

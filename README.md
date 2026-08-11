@@ -1,5 +1,7 @@
 # CyberGuard-ID
 
+🚀 **Live Demo:** [https://cyberguard-id.onrender.com](https://cyberguard-id.onrender.com)
+
 **Platform Skrining dan Prioritisasi Moderasi Komentar YouTube Indonesia Berbasis AI/ML (Production-Ready Architecture).**
 
 CyberGuard-ID dirancang untuk membantu kreator konten, agensi, dan tim moderasi dalam menyaring, mengkategorisasikan, dan memprioritaskan penanganan komentar berbahaya (ujaran kebencian, pelecehan seksual, ancaman, kekerasan) serta mendeteksi serangan terkoordinasi/bot repetitif pada kolom komentar video YouTube.

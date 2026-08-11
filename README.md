@@ -3,7 +3,7 @@ title: CyberGuard ID App
 emoji: 🛡️
 colorFrom: blue
 colorTo: indigo
-sdk: docker
+sdk: gradio
 app_port: 7860
 pinned: false
 ---

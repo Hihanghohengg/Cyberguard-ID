@@ -13,7 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from server.api import analysis, dataset, reports, system
+from server.api import analysis, reports, system
 from server.security import SecurityMiddleware, verify_api_key, RUNTIME_API_KEY
 
 # Project paths
@@ -55,7 +55,7 @@ async def global_exception_handler(request: Request, exc: Exception):
 app.include_router(analysis.router, dependencies=[Depends(verify_api_key)])
 app.include_router(reports.router, dependencies=[Depends(verify_api_key)])
 app.include_router(system.router, dependencies=[Depends(verify_api_key)])
-app.include_router(dataset.router, dependencies=[Depends(verify_api_key)])
+
 
 # Mount static files (CSS, JS, assets)
 if FRONTEND_DIR.exists():

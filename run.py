@@ -436,16 +436,20 @@ def main() -> None:
         install_dependencies()
         vpy = get_venv_python()
         args = [str(vpy), str(PROJECT_ROOT / "run.py")] + sys.argv[1:]
+        
         try:
-            os.execv(str(vpy), args)
-        except Exception:
-            # Fallback if execv is unavailable
+            # Menggunakan subprocess dengan p.wait() alih-alih os.execv 
+            # untuk mencegah proses menjadi zombie/berjalan di background pada Windows
+            p = subprocess.Popen(args)
+            p.wait()
+            sys.exit(p.returncode)
+        except KeyboardInterrupt:
             try:
-                ret = subprocess.call(args)
-                sys.exit(ret)
-            except (KeyboardInterrupt, SystemExit):
-                print("\n🛑 Dihentikan oleh pengguna.")
-                sys.exit(0)
+                p.wait(timeout=3)
+            except subprocess.TimeoutExpired:
+                p.terminate()
+            print("\n🛑 Dihentikan oleh pengguna.")
+            sys.exit(0)
 
     # We are inside the venv: print banner and initialize
     print_banner()

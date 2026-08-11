@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import sqlite3
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -72,7 +72,7 @@ class AdaptiveLearningService:
             self.initialize()
 
         text_hash = self._hash_text(normalized_text or original_text)
-        created_at = datetime.now(UTC).isoformat()
+        created_at = datetime.now(timezone.utc).isoformat()
         exemplar_id = f"lrn_{text_hash[:12]}"
 
         try:

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import csv
 import json
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -887,7 +887,7 @@ class ReportService:
                 "recommended_actions": summary.recommended_actions,
                 "limitations": summary.limitations,
             },
-            "generated_at": datetime.now(UTC).isoformat(),
+            "generated_at": datetime.now(timezone.utc).isoformat(),
         }
 
         with open(path, "w", encoding="utf-8") as f:
@@ -953,7 +953,7 @@ class ReportService:
             recommended_actions=summary.recommended_actions or [],
             limitations=summary.limitations or [],
             report_provider="Gemini AI" if report_provider == "gemini" else "Template Lokal (Engine Internal)",
-            generated_at=datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC"),
+            generated_at=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         )
 
         with open(path, "w", encoding="utf-8") as f:

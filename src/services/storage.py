@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import sqlite3
 import uuid
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -180,7 +180,7 @@ class StorageService:
         if not run.id:
             run.id = _generate_id()
         if not run.started_at:
-            run.started_at = datetime.now(UTC).isoformat()
+            run.started_at = datetime.now(timezone.utc).isoformat()
 
         conn = self._get_connection()
         conn.execute(
@@ -502,7 +502,7 @@ class StorageService:
         if not review.id:
             review.id = _generate_id()
         if not review.reviewed_at:
-            review.reviewed_at = datetime.now(UTC).isoformat()
+            review.reviewed_at = datetime.now(timezone.utc).isoformat()
 
         conn = self._get_connection()
         # Delete existing review for this comment first
@@ -546,7 +546,7 @@ class StorageService:
         if not report.id:
             report.id = _generate_id()
         if not report.generated_at:
-            report.generated_at = datetime.now(UTC).isoformat()
+            report.generated_at = datetime.now(timezone.utc).isoformat()
 
         conn = self._get_connection()
         conn.execute(

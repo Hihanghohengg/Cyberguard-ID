@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import contextlib
 import uuid
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from typing import Any
 
 from src.core.config import AppConfig
@@ -175,7 +175,7 @@ class AnalysisEngine:
                     analysis_id,
                     status,
                     AnalysisStatus.COMPLETED_NO_DATA.value,
-                    completed_at=datetime.now(UTC).isoformat(),
+                    completed_at=datetime.now(timezone.utc).isoformat(),
                 )
                 return analysis_id
 
@@ -248,7 +248,7 @@ class AnalysisEngine:
                     analysis_id,
                     status,
                     AnalysisStatus.COMPLETED_NO_DATA.value,
-                    completed_at=datetime.now(UTC).isoformat(),
+                    completed_at=datetime.now(timezone.utc).isoformat(),
                 )
                 return analysis_id
 
@@ -307,7 +307,7 @@ class AnalysisEngine:
                     AnalysisStatus.COMPLETED.value,
                     error_message="Model belum tersedia. Klasifikasi dilewati.",
                     total_comments=len(comments),
-                    completed_at=datetime.now(UTC).isoformat(),
+                    completed_at=datetime.now(timezone.utc).isoformat(),
                 )
                 return
 
@@ -401,7 +401,7 @@ class AnalysisEngine:
             analysis_id,
             status,
             AnalysisStatus.COMPLETED.value,
-            completed_at=datetime.now(UTC).isoformat(),
+            completed_at=datetime.now(timezone.utc).isoformat(),
         )
         self._notify(progress_callback, 9, "Analisis selesai!")
 

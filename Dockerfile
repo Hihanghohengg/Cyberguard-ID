@@ -28,8 +28,8 @@ COPY . .
 # Buat direktori yang dibutuhkan agar tidak error
 RUN mkdir -p artifacts/reports artifacts/predictions artifacts/evaluations artifacts/logs models data/raw data/processed data/sample
 
-# Expose port yang akan digunakan
-EXPOSE 7860
+# Gunakan env PORT yang disediakan platform (misal Render.com) atau default ke 8000
+ENV PORT=8000
 
 # Jalankan server FastAPI menggunakan uvicorn
-CMD ["uvicorn", "server.main:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD uvicorn server.main:app --host 0.0.0.0 --port ${PORT}

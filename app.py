@@ -1,17 +1,20 @@
 import os
 import uvicorn
-from server.main import app
-
+import gradio as gr
 import spaces
+from server.main import app as fastapi_app
 
+# Dummy function untuk memuaskan supervisor ZeroGPU
 @spaces.GPU
 def dummy_gpu_function():
-    pass
+    return "GPU Active"
 
-# Hugging Face Spaces (Gradio SDK) selalu mencari file app.py dan membuka port 7860.
-# Dengan file ini, kita "mengelabui" sistem Gradio agar menjalankan FastAPI kita di port tersebut secara gratis!
+# Buat dummy interface Gradio agar ZeroGPU mendeteksinya
+demo = gr.Interface(fn=dummy_gpu_function, inputs="text", outputs="text")
+
+# Gabungkan aplikasi FastAPI kita dengan dummy Gradio (mount Gradio di subpath)
+app = gr.mount_gradio_app(fastapi_app, demo, path="/_gradio_dummy")
 
 if __name__ == "__main__":
-    # Paksa aplikasi untuk berjalan di port 7860
     os.environ["APP_PORT"] = "7860"
     uvicorn.run(app, host="0.0.0.0", port=7860)

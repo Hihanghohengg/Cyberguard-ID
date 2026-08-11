@@ -1,103 +1,20 @@
 {
-    "dataset": "Ibrohim & Budi 2019",
-    "rows": {
-        "train": 9053,
-        "validation": 1940,
-        "test": 1941
-    },
-    "features": "Word TF-IDF (1,2) + Char TF-IDF (3,5)",
-    "algorithm": "LinearSVC",
-    "hyperparameters": {
-        "C": 0.5,
-        "class_weight": "balanced",
-        "random_state": 42
-    },
-    "labels": [
+    "algorithm": "IndoBERT",
+    "model_name": "indobenchmark/indobert-base-p1",
+    "classes": [
         "C0",
         "C1",
         "C2",
         "C3",
         "C4"
     ],
-    "threshold": 0.49999999999999994,
-    "margin_threshold": 0.0,
-    "validation_metrics": {
-        "accuracy": 0.7639175257731958,
-        "macro_precision": 0.7478830946594339,
-        "macro_recall": 0.707759696227355,
-        "macro_f1": 0.7238069239124402,
-        "weighted_f1": 0.7587781448235907,
-        "classes": {
-            "C0": {
-                "precision": 0.8295819935691319,
-                "recall": 0.8989547038327527,
-                "f1-score": 0.862876254180602,
-                "support": 861.0
-            },
-            "C1": {
-                "precision": 0.7257383966244726,
-                "recall": 0.6615384615384615,
-                "f1-score": 0.6921529175050302,
-                "support": 260.0
-            },
-            "C2": {
-                "precision": 0.6819923371647509,
-                "recall": 0.717741935483871,
-                "f1-score": 0.6994106090373281,
-                "support": 496.0
-            },
-            "C3": {
-                "precision": 0.6961325966850829,
-                "recall": 0.5,
-                "f1-score": 0.581986143187067,
-                "support": 252.0
-            },
-            "C4": {
-                "precision": 0.8059701492537313,
-                "recall": 0.7605633802816901,
-                "f1-score": 0.782608695652174,
-                "support": 71.0
-            }
-        }
-    },
-    "final_test_metrics": {
-        "accuracy": 0.7712519319938176,
-        "macro_precision": 0.7486049008846212,
-        "macro_recall": 0.7040715177694362,
-        "macro_f1": 0.7203003117044217,
-        "weighted_f1": 0.7645607288734751,
-        "classes": {
-            "C0": {
-                "precision": 0.8345626975763962,
-                "recall": 0.9187935034802784,
-                "f1-score": 0.8746548868028713,
-                "support": 862.0
-            },
-            "C1": {
-                "precision": 0.7533632286995515,
-                "recall": 0.6461538461538462,
-                "f1-score": 0.6956521739130435,
-                "support": 260.0
-            },
-            "C2": {
-                "precision": 0.6854990583804144,
-                "recall": 0.7323943661971831,
-                "f1-score": 0.708171206225681,
-                "support": 497.0
-            },
-            "C3": {
-                "precision": 0.7159763313609467,
-                "recall": 0.4801587301587302,
-                "f1-score": 0.5748218527315915,
-                "support": 252.0
-            },
-            "C4": {
-                "precision": 0.7536231884057971,
-                "recall": 0.7428571428571429,
-                "f1-score": 0.7482014388489209,
-                "support": 70.0
-            }
-        }
-    },
-    "random_state": 42
+    "eval_metrics": {
+        "eval_loss": 0.6135566234588623,
+        "eval_accuracy": 0.810796645702306,
+        "eval_macro_f1": 0.768170276761251,
+        "eval_runtime": 166.8008,
+        "eval_samples_per_second": 11.439,
+        "eval_steps_per_second": 0.719,
+        "epoch": 3.0
+    }
 }

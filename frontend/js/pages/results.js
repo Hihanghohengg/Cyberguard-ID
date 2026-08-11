@@ -52,9 +52,6 @@ const ResultsPage = {
                             <button type="button" class="btn btn-secondary btn-sm" style="width:100%; justify-content:flex-start;" onclick="ResultsPage.handleDownloadPDF()" title="Cetak atau Simpan sebagai PDF">
                                 <span class="material-symbols-outlined" style="font-size: 18px;">print</span> PDF
                             </button>
-                            <button type="button" class="btn btn-secondary btn-sm" style="width:100%; justify-content:flex-start;" onclick="ResultsPage.handleDownloadHTML()" title="Unduh Berkas Laporan Web">
-                                <span class="material-symbols-outlined" style="font-size: 18px;">html</span> HTML
-                            </button>
                             <button type="button" class="btn btn-secondary btn-sm" style="width:100%; justify-content:flex-start;" onclick="ResultsPage.handleDownloadCSV()" title="Unduh Data Mentah CSV">
                                 <span class="material-symbols-outlined" style="font-size: 18px;">table_view</span> CSV
                             </button>
@@ -229,6 +226,7 @@ const ResultsPage = {
                             <thead>
                                 <tr>
                                     <th style="width: 50px;">No</th>
+                                    <th style="width: 140px;">Pengguna</th>
                                     <th>Isi Komentar</th>
                                     <th style="width: 160px;">Kategori</th>
                                     <th style="width: 140px;">Tingkat Risiko</th>
@@ -493,7 +491,7 @@ const ResultsPage = {
 
         if (!comments || comments.length === 0) {
             tbody.innerHTML = `
-                <tr><td colspan="5" style="text-align: center; padding: 30px; color: var(--text-muted);">Tidak ada komentar yang sesuai dengan filter.</td></tr>
+                <tr><td colspan="6" style="text-align: center; padding: 30px; color: var(--text-muted);">Tidak ada komentar yang sesuai dengan filter.</td></tr>
             `;
             return;
         }
@@ -544,13 +542,14 @@ const ResultsPage = {
             return `
                 <tr>
                     <td style="color: var(--text-muted); font-size: 0.85rem; vertical-align: top; padding-top: 14px;">${startIndex + idx + 1}</td>
+                    <td style="color: #94A3B8; font-weight: 500; font-size: 0.85rem; vertical-align: top; padding-top: 14px; word-break: break-all;">@${item.author_hash || 'Anonymous'}</td>
                     <td style="color: #ffffff; line-height: 1.5; font-size: 0.95rem; vertical-align: top; padding-top: 14px;">
                         ${displayHtml}
                         ${item.is_reviewed ? `<span class="chip chip-aman" style="font-size: 0.7rem; margin-top: 8px; display: inline-block;">Ditinjau Manual</span>` : ''}
                     </td>
-                    <td><span class="chip ${catInfo.chip}">${catInfo.label}</span></td>
-                    <td>${riskBadge}</td>
-                    <td style="text-align: center;">
+                    <td style="vertical-align: top; padding-top: 14px;"><span class="chip ${catInfo.chip}">${catInfo.label}</span></td>
+                    <td style="vertical-align: top; padding-top: 14px;">${riskBadge}</td>
+                    <td style="text-align: center; vertical-align: top; padding-top: 14px;">
                         <button type="button" class="btn btn-secondary btn-sm" onclick="ResultsPage.openReviewModal(${idx})">
                             <span class="material-symbols-outlined" style="font-size: 16px;">edit</span>
                             <span>Tinjau</span>

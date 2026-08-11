@@ -12,15 +12,14 @@ Aplikasi ini menggunakan arsitektur **Decoupled Client-Server**, yang merangkum 
 - **Model Utama**: **IndoBERT** (`indobenchmark/indobert-base-p1`)
 - **Baseline Pembanding (RM2)**: **TF-IDF + LinearSVC**
 - **Dataset Utama**: Ibrohim & Budi 2019 (13.169 raw → 12.934 usable) dengan split 9.053 (Train) / 1.940 (Validation) / 1.941 (Test).
-- **Alur Inti**: YouTube/CSV → Preprocessing → Klasifikasi → Confidence Thresholding → Dashboard → Human Review → Export.
+- **Alur Inti**: YouTube URL Input → Preprocessing → Klasifikasi → Confidence Thresholding → Dashboard Hasil → Export PDF/CSV.
 
 ### Workflow & Data Pipeline
 ```mermaid
 graph TD
     %% Input Sources
     subgraph Data Input
-        A1[YouTube API] --> B{Data Ingestion}
-        A2[CSV File Upload] --> B
+        A1[YouTube API (URL)] --> B{Data Ingestion}
     end
 
     %% Core Engine
@@ -43,7 +42,7 @@ graph TD
         I --> J
         
         J --> K[Interactive Dashboard SPA]
-        K --> L[Export PDF/CSV & Laporan]
+        K --> L[Export PDF & Laporan CSV Mentah]
     end
 ```
 > [!TIP]
@@ -53,7 +52,7 @@ graph TD
 *Fitur Non-Core (Pendukung)*: Risk scoring, integrasi Gemini (AI Summarization), dan Adaptive Learning adalah fitur tambahan dan **bukan kontribusi metodologis utama**.
 
 - **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Async REST API, SSE streaming, SQLite WAL mode, **IndoBERT Pipeline**)
-- **Frontend**: **Modern Single Page Application (SPA)** murni (Vanilla HTML5 / Modern CSS / Vanilla JavaScript ES6+) dengan desain dark mode glassmorphism, visualisasi [Chart.js](https://www.chartjs.org/), dan ikonik [Lucide Icons](https://lucide.dev/).
+- **Frontend**: **Modern Single Page Application (SPA)** murni (Vanilla HTML5 / Modern CSS / Vanilla JavaScript ES6+) yang mengedepankan fungsionalitas minimalis (URL-only) dengan desain responsif multiplatform, visualisasi [Chart.js](https://www.chartjs.org/), dan ikonik [Lucide Icons](https://lucide.dev/).
 
 ```
 cyberguard-id/
@@ -61,19 +60,18 @@ cyberguard-id/
 │   ├── main.py                 # FastAPI app entry point & static file server
 │   ├── dependencies.py         # Singleton dependency injection
 │   └── api/
-│       ├── analysis.py         # Analisis YouTube & CSV + real-time SSE progress
-│       ├── reports.py          # Generator & download laporan (HTML, CSV, JSON)
-│       ├── system.py           # Health check & schema taksonomi label
-│       └── dataset.py          # Manajemen dataset & inline labeling
+│       ├── analysis.py         # Analisis YouTube + real-time SSE progress
+│       ├── reports.py          # Generator & download laporan (PDF, CSV)
+│       └── system.py           # Health check & schema taksonomi label
 │
 ├── frontend/                   # Modern SPA Frontend (No build step required)
 │   ├── index.html              # Shell HTML utama
-│   ├── css/style.css           # Design system (Dark mode, Glassmorphism, Micro-animations)
+│   ├── css/style.css           # Design system (Adaptif, Multiplatform, Dark Mode)
 │   └── js/
 │       ├── app.js              # SPA Router & state manager
 │       ├── api.js              # Fetch client & SSE wrapper
 │       ├── components/         # Reusable UI (Toast, Progress, Charts, DataTable)
-│       └── pages/              # Halaman SPA (Dashboard, Analyze, Results, Report, Dataset)
+│       └── pages/              # Halaman SPA (Dashboard, Analyze, Results, Report)
 │
 ├── src/                        # Core Engine & Services
 │   ├── core/                   # Schemas, Config, Exceptions, Logging
@@ -81,7 +79,6 @@ cyberguard-id/
 │   └── workflow/               # Analysis Orchestration Engine
 │
 ├── config/                     # Konfigurasi Taksonomi & Model (YAML)
-├── data/                       # Penyimpanan Dataset Mentah & Olahan
 ├── models/                     # Model Klasifikasi (IndoBERT HuggingFace) & Metadata
 ├── artifacts/                  # Database SQLite (cyberguard.db), Hasil Analisis & Laporan
 ├── scripts/                    # Script Training, Evaluasi & Audit
@@ -111,7 +108,7 @@ Sistem menggunakan 6 kategori klasifikasi (5 kategori model terlatih + 1 kategor
 - (Opsional) Google Gemini API Key (untuk ringkasan eksekutif AI)
 
 ### 2. Menjalankan Aplikasi
-Cukup jalankan satu perintah:
+Cukup jalankan satu perintah di terminal:
 ```bash
 python run.py
 ```
@@ -155,7 +152,8 @@ Setelah server berjalan, dokumentasi interaktif Swagger UI tersedia di:
 
 ---
 
-## Keunggulan Desain & Privasi
-- **Privasi Data**: Identitas pengunggah komentar disamarkan menggunakan Salted SHA-256 (`USER_XXXXXX`) demi mematuhi regulasi privasi data.
+## Keunggulan Desain & Transparansi Data
+- **Keutuhan Konteks & Audit**: Nama asli pengguna pengirim komentar (YouTube username) terekam sepenuhnya dan ditampikan dalam Dashboard maupun Laporan (PDF/CSV) untuk keperluan audit keamanan dan pelacakan pelanggar secara akurat.
 - **Deteksi Serangan Terkoordinasi**: Memiliki modul *Repetition Detector* dengan MinHash LSH / TF-IDF Cosine Similarity untuk mendeteksi gelombang bot atau spam brigade.
 - **Explainability**: Setiap prediksi menyertakan skor keyakinan terkalibrasi (*calibrated probability*), margin keputusan, dan penanda verifikasi kepastian.
+- **Adaptif**: Dibangun dengan antarmuka CSS kustom (tanpa library berat), sangat responsif dan aman digunakan untuk ukuran layar mulai dari Monitor Desktop hingga Layar Mobile berukuran kecil.

@@ -6,7 +6,7 @@
     "size_bytes": 1858473,
     "local_path": "D:\\Obed\\cyberguard-id\\data\\raw_sources\\re_dataset.csv",
     "download_url": "https://raw.githubusercontent.com/okkyibrohim/id-multi-label-hate-speech-and-abusive-language-detection/master/re_dataset.csv",
-    "download_timestamp": "2026-08-10T06:50:31.825621+00:00"
+    "download_timestamp": "2026-08-10T16:09:25.006450+00:00"
   },
   "alfina_et_al_2017": {
     "source_id": "alfina_et_al_2017",
@@ -15,7 +15,7 @@
     "size_bytes": 77009,
     "local_path": "D:\\Obed\\cyberguard-id\\data\\raw_sources\\IDHSD_RIO_unbalanced_713_2017.txt",
     "download_url": "https://raw.githubusercontent.com/ialfina/id-hatespeech-detection/master/IDHSD_RIO_unbalanced_713_2017.txt",
-    "download_timestamp": "2026-08-10T06:50:31.825621+00:00"
+    "download_timestamp": "2026-08-10T16:09:25.009865+00:00"
   },
   "indonlu_smsa_2020": {
     "source_id": "indonlu_smsa_2020",
@@ -24,6 +24,6 @@
     "size_bytes": 2186718,
     "local_path": "D:\\Obed\\cyberguard-id\\data\\raw_sources\\train_preprocess.tsv",
     "download_url": "https://raw.githubusercontent.com/indobenchmark/indonlu/master/dataset/smsa_doc-sentiment-prosa/train_preprocess.tsv",
-    "download_timestamp": "2026-08-10T06:50:31.830921+00:00"
+    "download_timestamp": "2026-08-10T16:09:25.017619+00:00"
   }
 }

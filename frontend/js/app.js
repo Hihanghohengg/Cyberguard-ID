@@ -8,7 +8,6 @@ const App = {
         'analyze': HomePage,      // Seamlessly directs to the clean home input
         'results': ResultsPage,
         'report': ResultsPage,    // Seamlessly directs to results with top download bar
-        'dataset': DatasetPage,
     },
 
     currentPage: null,

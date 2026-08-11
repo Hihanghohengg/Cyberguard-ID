@@ -135,7 +135,7 @@ const API = {
         return this.post('/api/analyze', {
             url: payload.video_url || payload.url,
             name: payload.name || '',
-            max_comments: payload.max_comments || 5000,
+            max_comments: payload.max_comments || 500,
             include_replies: payload.include_replies !== false,
         });
     },

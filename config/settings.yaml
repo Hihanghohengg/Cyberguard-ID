@@ -17,7 +17,7 @@ youtube:
 # Paths
 paths:
   database: "artifacts/cyberguard.db"
-  model: "models/moderation_pipeline.joblib"
+  model: "models/indobert_cyberguard"
   model_metadata: "models/model_metadata.json"
   artifacts: "artifacts"
   reports: "artifacts/reports"
@@ -30,8 +30,8 @@ paths:
 
 # Privacy
 privacy:
-  store_original_username: false
-  anonymize_authors: true
+  store_original_username: true
+  anonymize_authors: false
   anonymization_method: "salted_sha256"
 
 # Gemini

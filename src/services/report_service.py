@@ -558,11 +558,11 @@ body {
                 </div>
                 <div class="kpi-card danger">
                     <div class="kpi-num">{{ harmful_count }}</div>
-                    <div class="kpi-label">Terindikasi Toksik ({{ harmful_pct }}%)</div>
+                    <div class="kpi-label">Komentar Berbahaya ({{ harmful_pct }}%)</div>
                 </div>
                 <div class="kpi-card warning">
-                    <div class="kpi-num">{{ high_count + critical_count }}</div>
-                    <div class="kpi-label">Prioritas Kritis & Tinggi</div>
+                    <div class="kpi-num">{{ review_count }}</div>
+                    <div class="kpi-label">Perlu Ditinjau</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-num">{{ cluster_count }}</div>
@@ -926,7 +926,8 @@ class ReportService:
 
         # Calculate severity and percentage metrics
         total = stats.total_comments or 0
-        harmful = stats.harmful_count or 0
+        harmful = (stats.high_count or 0) + (stats.critical_count or 0)
+        review_count = (stats.uncertain_count or 0) + (stats.risk_distribution.get("sedang", 0) if stats.risk_distribution else 0)
         harmful_pct = round((harmful / total * 100), 1) if total > 0 else 0.0
 
         if (stats.critical_count or 0) > 0:
@@ -946,6 +947,7 @@ class ReportService:
             total_comments=total,
             harmful_count=harmful,
             harmful_pct=harmful_pct,
+            review_count=review_count,
             high_count=stats.high_count or 0,
             critical_count=stats.critical_count or 0,
             cluster_count=stats.cluster_count or 0,

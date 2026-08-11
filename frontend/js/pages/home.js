@@ -103,7 +103,7 @@ const HomePage = {
         try {
             const resp = await API.startYouTubeAnalysis({
                 video_url: url,
-                max_comments: 5000,
+                max_comments: 500,
                 include_replies: true,
             });
 

@@ -7,8 +7,10 @@
 - Bahasa Indonesia
 - Label dipetakan ke C0–C4 (C5 sebagai abstention)
 - Sumber dan lisensi terdokumentasi
-- Username bukan feature
+- Username bukan feature (untuk training model)
 
+> [!NOTE]
+> Pada saat koleksi data berjalan (YouTube API), nama pengguna direkam dan tidak dianonimkan untuk menjaga keutuhan konteks dan keperluan audit.
 ### Schema
 ```csv
 id,text,label,source,source_group,created_at
@@ -93,7 +95,16 @@ Per-category fixed scores (0–5).
 - High: 4–5
 - Critical: 6+
 
-## 7. Repetition Detection
+## 7. Indeks Risiko Global (Global Risk Index)
+
+Status laporan secara keseluruhan (Global Risk Index) dihitung murni berdasarkan persentase jumlah komentar berbahaya dari total komentar, dengan struktur sebagai berikut:
+
+- **Rendah (Low):** < 5% komentar berbahaya
+- **Sedang (Medium):** 5% - 15% komentar berbahaya
+- **Tinggi (High):** 15% - 30% komentar berbahaya
+- **Kritis (Critical):** > 30% komentar berbahaya
+
+## 8. Repetition Detection
 
 ### Technique
 TF-IDF cosine similarity pada harmful comments.

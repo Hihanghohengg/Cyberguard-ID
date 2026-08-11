@@ -124,7 +124,7 @@ Salin atau edit file `.env`:
 YOUTUBE_API_KEY=your_youtube_api_key_here
 GEMINI_API_KEY=your_gemini_api_key_here
 GEMINI_MODEL=gemini-2.5-flash-lite
-ANONYMIZATION_SALT=rahasia-salt-unik
+ANONYMIZATION_SALT=rahasia-salt-unik # Digunakan khusus untuk anonimisasi data pada unggahan CSV
 APP_PORT=8000
 LOG_LEVEL=INFO
 ```

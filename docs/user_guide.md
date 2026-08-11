@@ -23,7 +23,7 @@ YOUTUBE_API_KEY=your-youtube-api-key-here
 # Untuk narasi laporan AI (opsional)
 GEMINI_API_KEY=your-gemini-api-key-here
 
-# Ubah ke nilai acak
+# Ubah ke nilai acak (Hanya digunakan khusus untuk anonimisasi data pada analisis CSV)
 ANONYMIZATION_SALT=ganti-dengan-nilai-acak
 ```
 
@@ -76,7 +76,7 @@ Jika tidak ada dataset, sample data akan digunakan untuk demo.
 4. Unggah file CSV dengan kolom `text`
 
 ### Kolom Opsional
-- `author` — Nama penulis (akan dianonimkan)
+- `author` — Nama penulis (akan dianonimkan berdasarkan ANONYMIZATION_SALT)
 - `published_at` — Timestamp
 - `is_reply` — 1 jika reply
 - `parent_id` — ID komentar induk

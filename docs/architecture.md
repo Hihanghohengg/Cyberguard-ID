@@ -35,7 +35,7 @@
 ## Data Flow
 
 ```
-URL/CSV → Validate → Collect → Anonymize → Preprocess →
+URL/CSV → Validate → Collect → Process Metadata & Optional Anonymization → Preprocess →
   Classify → Detect Patterns → Score Risk → Verify →
   Human Review Queue → Generate Report → Export
 ```

@@ -42,14 +42,7 @@ Sistem menggunakan model *deep learning* berbasis Transformers sebagai model uta
 - **Tugas**: Sequence Classification (5 kelas training: C0, C1, C2, C3, C4)
 - **Kapasitas**: Mampu menangkap konteks kalimat dan semantik bahasa gaul/colloquial Indonesia yang tidak bisa ditangkap oleh metode statistik tradisional.
 
-## 4. Baseline Pembanding: TF-IDF + Calibrated Linear SVM (RM2)
-
-Sebagai baseline pembanding untuk riset, sistem juga memelihara arsitektur tradisional:
-- **Feature Engineering**: Word-level TF-IDF (1-2 gram) & Character-level TF-IDF (3-5 gram).
-- **Base Estimator**: `LinearSVC` (C=1.0, class_weight="balanced")
-- **Calibration**: `CalibratedClassifierCV` (Platt scaling, cv=5) untuk probabilitas terkalibrasi.
-
-## 5. Confidence & Verification
+## 4. Confidence & Verification
 
 ### Threshold Configuration
 ```yaml
@@ -68,7 +61,7 @@ strong_margin: 0.15
 | MANDATORY_REVIEW | 0.55 ≤ conf < 0.70 |
 | UNCERTAIN (C5) | conf < 0.55 OR margin < 0.10 |
 
-## 6. Evaluation Metrics
+## 5. Evaluation Metrics
 
 ### Primary Metrics
 - **Macro F1** — overall classifier quality
@@ -81,7 +74,7 @@ strong_margin: 0.15
 - Inference time per 100 comments
 - Model file size
 
-## 7. Risk Scoring
+## 6. Risk Scoring
 
 ### Base Scores
 Per-category fixed scores (0–5).
@@ -100,7 +93,7 @@ Per-category fixed scores (0–5).
 - High: 4–5
 - Critical: 6+
 
-## 8. Repetition Detection
+## 7. Repetition Detection
 
 ### Technique
 TF-IDF cosine similarity pada harmful comments.
@@ -118,7 +111,7 @@ Greedy clustering + reply-thread grouping.
 
 ---
 
-## 9. Caveat Metodologis & Validasi Eksternal
+## 8. Caveat Metodologis & Validasi Eksternal
 
 > [!WARNING]
 > **Domain Shift (Twitter/X vs YouTube)**

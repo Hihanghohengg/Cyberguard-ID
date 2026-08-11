@@ -6,7 +6,6 @@
 - **Type:** Single-label multiclass text classifier
 - **Framework:** Transformers (HuggingFace) / PyTorch
 - **Architecture:** IndoBERT Base (Sequence Classification)
-- **Baseline Pembanding:** TF-IDF + Calibrated Linear SVM
 
 ## Intended Use
 - Skrining dan prioritisasi komentar YouTube berbahasa Indonesia

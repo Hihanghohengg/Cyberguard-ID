@@ -10,7 +10,6 @@ CyberGuard-ID dirancang untuk membantu kreator konten, agensi, dan tim moderasi 
 
 Aplikasi ini menggunakan arsitektur **Decoupled Client-Server**, yang merangkum kontribusi utama penelitian:
 - **Model Utama**: **IndoBERT** (`indobenchmark/indobert-base-p1`)
-- **Baseline Pembanding (RM2)**: **TF-IDF + LinearSVC**
 - **Alur Inti**: YouTube URL Input → Preprocessing → Klasifikasi → Confidence Thresholding → Dashboard Hasil → Export PDF/CSV.
 
 ### Workflow & Data Pipeline

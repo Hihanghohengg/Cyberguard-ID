@@ -313,7 +313,12 @@ class AnalysisEngine:
         texts = [c.normalized_text or c.original_text for c in comments]
         raw_texts = [c.original_text for c in comments]
         ids = [c.id for c in comments]
-        predictions = self.classifier.predict(texts, ids, raw_texts=raw_texts)
+        predictions = self.classifier.predict(
+            texts, 
+            ids, 
+            raw_texts=raw_texts, 
+            progress_callback=progress_callback
+        )
 
         # Step 4.5: LLM Arbiter (Hybrid AI)
         uncertain_preds = [p for p in predictions if p.verification_status == VerificationStatus.UNCERTAIN.value]

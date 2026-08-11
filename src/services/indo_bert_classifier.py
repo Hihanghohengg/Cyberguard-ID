@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
+from typing import Any
 
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
@@ -67,7 +68,7 @@ class IndoBERTClassifier:
             logger.error("Failed to load IndoBERT: %s", e)
             raise
 
-    def predict_proba(self, texts: list[str]) -> np.ndarray:
+    def predict_proba(self, texts: list[str], progress_callback: Any | None = None) -> np.ndarray:
         """Predict probability scores for a batch of texts.
         
         Matches sklearn predict_proba signature.
@@ -86,6 +87,11 @@ class IndoBERTClassifier:
         
         for i in range(0, len(texts), batch_size):
             batch_texts = texts[i:i + batch_size]
+            
+            if progress_callback and len(batch_texts) > 0:
+                snippet = batch_texts[0][:50].replace("\n", " ").strip()
+                progress_callback(4, f"Menganalisis: '{snippet}...'")
+
             inputs = self.tokenizer(
                 batch_texts, 
                 padding=True, 

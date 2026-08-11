@@ -98,6 +98,7 @@ class ClassifierService:
         texts: list[str],
         comment_ids: list[str],
         raw_texts: list[str] | None = None,
+        progress_callback: Any | None = None,
     ) -> list[Prediction]:
         """Classify a batch of texts with contextual intelligence & adaptive learning.
 
@@ -118,7 +119,7 @@ class ClassifierService:
         from src.services.context_engine import context_disambiguator
 
         # Get probability predictions
-        probas = self.pipeline.predict_proba(texts)
+        probas = self.pipeline.predict_proba(texts, progress_callback=progress_callback)
 
         predictions: list[Prediction] = []
         for i, proba in enumerate(probas):

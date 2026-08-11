@@ -182,7 +182,10 @@ class YouTubeService:
                 for item in items:
                     top_snippet = item["snippet"]["topLevelComment"]["snippet"]
                     author_name = top_snippet.get("authorDisplayName", "Anonymous")
-                    author_hash = anonymize_author(author_name, self.salt)
+                    if store_original_username:
+                        author_hash = author_name
+                    else:
+                        author_hash = anonymize_author(author_name, self.salt)
 
                     comment = Comment(
                         analysis_id=analysis_id,
@@ -205,6 +208,7 @@ class YouTubeService:
                                 item,
                                 service,
                                 analysis_id,
+                                store_original_username,
                             )
                             comments.extend(replies)
 
@@ -225,6 +229,7 @@ class YouTubeService:
         thread_item: dict,
         service: Any,
         analysis_id: str,
+        store_original_username: bool = False,
     ) -> list[Comment]:
         """Fetch replies within a comment thread."""
         replies: list[Comment] = []
@@ -235,7 +240,10 @@ class YouTubeService:
         for reply_item in inline:
             snippet = reply_item["snippet"]
             author_name = snippet.get("authorDisplayName", "Anonymous")
-            author_hash = anonymize_author(author_name, self.salt)
+            if store_original_username:
+                author_hash = author_name
+            else:
+                author_hash = anonymize_author(author_name, self.salt)
 
             reply = Comment(
                 analysis_id=analysis_id,
@@ -266,7 +274,10 @@ class YouTubeService:
                     for item in resp.get("items", []):
                         snippet = item["snippet"]
                         author_name = snippet.get("authorDisplayName", "Anonymous")
-                        author_hash = anonymize_author(author_name, self.salt)
+                        if store_original_username:
+                            author_hash = author_name
+                        else:
+                            author_hash = anonymize_author(author_name, self.salt)
                         # Skip if already in inline replies
                         if any(r.external_comment_id == item["id"] for r in replies):
                             continue

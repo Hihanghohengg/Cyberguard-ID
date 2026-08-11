@@ -167,6 +167,7 @@ class AnalysisEngine:
                 max_comments=max_comments,
                 include_replies=include_replies,
                 analysis_id=analysis_id,
+                store_original_username=True,
             )
 
             if not comments:

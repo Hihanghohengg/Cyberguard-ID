@@ -7,10 +7,10 @@ These are the canonical data structures used across all modules.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from enum import StrEnum
+from enum import Enum
 
 
-class VerificationStatus(StrEnum):
+class VerificationStatus(str, Enum):
     """Verification status for a prediction."""
 
     MODEL_VERIFIED = "MODEL_VERIFIED"
@@ -20,7 +20,7 @@ class VerificationStatus(StrEnum):
     HUMAN_VERIFIED = "HUMAN_VERIFIED"
 
 
-class RiskLevel(StrEnum):
+class RiskLevel(str, Enum):
     """Risk level classification."""
 
     LOW = "low"
@@ -29,7 +29,7 @@ class RiskLevel(StrEnum):
     CRITICAL = "critical"
 
 
-class AnalysisStatus(StrEnum):
+class AnalysisStatus(str, Enum):
     """Status of an analysis run."""
 
     INITIALIZED = "INITIALIZED"
@@ -47,7 +47,7 @@ class AnalysisStatus(StrEnum):
     FAILED = "FAILED"
 
 
-class ReviewDecision(StrEnum):
+class ReviewDecision(str, Enum):
     """Possible decisions for human review."""
 
     AGREE = "agree"
@@ -59,7 +59,7 @@ class ReviewDecision(StrEnum):
     RECOMMEND_REPORT = "recommend_report"
 
 
-class IndicationLevel(StrEnum):
+class IndicationLevel(str, Enum):
     """Cyberbullying indication levels."""
 
     NONE = "none"

@@ -70,7 +70,7 @@ cyberguard-id/
 │       ├── app.js              # SPA Router & state manager
 │       ├── api.js              # Fetch client & SSE wrapper
 │       ├── components/         # Reusable UI (Toast, Progress, Charts, DataTable)
-│       └── pages/              # Halaman SPA (Dashboard, Analyze, Results, Report)
+│       └── pages/              # Halaman SPA (Home, Results)
 │
 ├── src/                        # Core Engine & Services
 │   ├── core/                   # Schemas, Config, Exceptions, Logging

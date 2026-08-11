@@ -723,12 +723,6 @@ body {
                     <div class="sign-line"></div>
                     <div style="font-family: monospace; font-size: 11px; color: var(--text-muted);">Signature: CG-AI-{{ analysis_id[:8] }}</div>
                 </div>
-                <div class="sign-box">
-                    <div style="font-weight: 700; color: var(--text-main);">Verifikasi Moderator Manusia:</div>
-                    <div style="color: var(--text-muted);">Lead Content Moderator / Auditor</div>
-                    <div class="sign-line"></div>
-                    <div style="font-family: monospace; font-size: 11px; color: var(--text-muted);">Tanggal Review: ____________________</div>
-                </div>
             </div>
         </section>
     </main>
@@ -930,11 +924,11 @@ class ReportService:
         review_count = (stats.uncertain_count or 0) + (stats.risk_distribution.get("sedang", 0) if stats.risk_distribution else 0)
         harmful_pct = round((harmful / total * 100), 1) if total > 0 else 0.0
 
-        if (stats.critical_count or 0) > 0:
+        if harmful_pct > 30.0:
             severity_label = "Kritis"
-        elif (stats.high_count or 0) > 0:
+        elif harmful_pct >= 15.0:
             severity_label = "Tinggi"
-        elif harmful > 0:
+        elif harmful_pct >= 5.0:
             severity_label = "Sedang"
         else:
             severity_label = "Rendah"

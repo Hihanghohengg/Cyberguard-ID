@@ -19,7 +19,7 @@ Aplikasi ini menggunakan arsitektur **Decoupled Client-Server**, yang merangkum 
 graph TD
     %% Input Sources
     subgraph Data Input
-        A1[YouTube API (URL)] --> B{Data Ingestion}
+        A1["YouTube API (URL)"] --> B{Data Ingestion}
     end
 
     %% Core Engine

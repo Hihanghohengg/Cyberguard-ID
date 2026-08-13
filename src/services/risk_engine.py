@@ -1,7 +1,21 @@
 """CyberGuard-ID — Risk Engine Service.
 
-Computes risk scores by combining base category scores with additional
-indicator scores. Determines risk levels transparently and auditably.
+Menghitung skor risiko dengan menggabungkan base score kategori prediksi
+dengan skor indikator tambahan (target individu, insite, doxxing, dll).
+Menentukan risk level (low/medium/high/critical) secara transparan dan auditabel.
+
+Base scores sesuai taksonomi CyberGuard-ID (labels.yaml):
+  C0 normal               = 0  (Low risk)
+  C1 abusive              = 1  (Medium risk jika ada indikator tambahan)
+  C2 hate_speech_weak     = 2  (Medium risk)
+  C3 hate_speech_moderate = 3  (High risk)
+  C4 hate_speech_strong   = 4  (High/Critical risk)
+
+Risk Levels:
+  low      : 0–1  total score
+  medium   : 2–3  total score
+  high     : 4–5  total score
+  critical : 6+   total score
 """
 
 from __future__ import annotations
@@ -23,28 +37,33 @@ class RiskEngine:
         additional_scores: dict[str, int] | None = None,
         risk_levels: dict[str, dict[str, int]] | None = None,
     ) -> None:
+        # Base scores sesuai taksonomi labels.yaml (C0–C4)
+        # Catatan: skor ini mencerminkan tingkat keparahan kategori prediksi secara langsung.
+        # Indikator kontekstual tambahan (additional_scores) dapat menaikkan total score.
         self.base_scores = base_scores or {
-            "normal": 0,
-            "abusive": 4,  # Elevate abusive to High Risk threshold
-            "hate_speech_weak": 4, # High Risk
-            "hate_speech_moderate": 5, # High Risk
-            "hate_speech_strong": 6, # Critical Risk
+            "normal": 0,              # C0: Tidak berbahaya
+            "abusive": 1,             # C1: Kasar, belum tentu berbahaya
+            "hate_speech_weak": 2,    # C2: Ujaran kebencian ringan
+            "hate_speech_moderate": 3, # C3: Ujaran kebencian sedang
+            "hate_speech_strong": 4,  # C4: Ujaran kebencian ekstrem
         }
 
+        # Skor bonus dari faktor kontekstual yang memperparah risiko
         self.additional_scores = additional_scores or {
-            "target_individual_detected": 1,
-            "target_minor_suspected": 1,
-            "repeated_harmful_comments_min_3": 1,
-            "unique_authors_min_3": 1,
-            "incitement_to_attack": 2,
-            "doxxing_indicator": 2,
+            "target_individual_detected": 1,      # Menyerang individu spesifik
+            "target_minor_suspected": 1,           # Menargetkan anak di bawah umur
+            "repeated_harmful_comments_min_3": 1,  # Serangan berulang (min. 3 komentar)
+            "unique_authors_min_3": 1,             # Dilakukan ≥3 pengguna unik (terkoordinasi)
+            "incitement_to_attack": 2,             # Ajakan/hasutan menyerang orang lain
+            "doxxing_indicator": 2,                # Indikasi penyebaran data pribadi
         }
 
+        # Threshold skor total untuk setiap risk level
         self.risk_levels = risk_levels or {
-            "low": {"min": 0, "max": 1},
-            "medium": {"min": 2, "max": 3},
-            "high": {"min": 4, "max": 5},
-            "critical": {"min": 6},
+            "low": {"min": 0, "max": 1},   # Skor 0–1: Tidak berbahaya
+            "medium": {"min": 2, "max": 3}, # Skor 2–3: Perlu dipantau
+            "high": {"min": 4, "max": 5},  # Skor 4–5: Perlu review segera
+            "critical": {"min": 6},         # Skor 6+: Eskalasi prioritas
         }
 
     def score_prediction(

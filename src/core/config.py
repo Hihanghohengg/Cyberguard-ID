@@ -44,7 +44,7 @@ class AppConfig:
     use_gemini: bool = True
     anonymization_salt: str = "replace-with-random-secret"
     app_env: str = "development"
-    app_port: int = 8000
+    app_port: int = 8001
     log_level: str = "INFO"
 
     # Loaded from YAML
@@ -217,7 +217,7 @@ def load_config() -> AppConfig:
         use_gemini=os.getenv("USE_GEMINI", "true").lower() in ("true", "1", "yes"),
         anonymization_salt=os.getenv("ANONYMIZATION_SALT", "replace-with-random-secret"),
         app_env=os.getenv("APP_ENV", "development"),
-        app_port=int(os.getenv("APP_PORT", "8000")),
+        app_port=int(os.getenv("APP_PORT", "8001")),
         log_level=os.getenv("LOG_LEVEL", "INFO"),
         labels=labels,
         thresholds=thresholds,

@@ -10,6 +10,27 @@ CyberGuard-ID dirancang untuk membantu kreator konten, agensi, dan tim moderasi 
 
 ---
 
+## Transparansi Komponen Sistem
+
+Untuk memastikan integritas akademik dan memperjelas batasan fungsionalitas sistem, tabel berikut merinci komponen mana yang menggunakan metode deterministik, mana yang merupakan model *Machine Learning* yang dilatih sendiri, dan mana yang menggunakan bantuan LLM via API. Pendekatan ini mencegah *overclaiming* atas kapabilitas AI pada proyek ini:
+
+| Komponen / Fungsionalitas | Pendekatan | Deskripsi Implementasi |
+|---------------------------|------------|------------------------|
+| **Text Preprocessing** | Deterministik / Rule-Based | Regex (hapus URL/mention) dan pemetaan kamus (slang translation). |
+| **Deteksi Spam / Bot** | Deterministik / Statistik | Algoritma *MinHash LSH* dan *TF-IDF Cosine Similarity* untuk mendeteksi kemiripan teks. |
+| **Klasifikasi Teks (C0-C4)** | **ML Terlatih (Deep Learning)** | Model bahasa **IndoBERT** yang **di-fine-tune secara mandiri** menggunakan framework PyTorch pada dataset spesifik. Bukan menggunakan *prompting* LLM. |
+| **Confidence Scoring (C5)**| Deterministik / Logika | Penentuan label "Tidak Pasti" (C5) berdasarkan *softmax probability thresholding* dari output IndoBERT. |
+| **Ringkasan Eksekutif** | LLM-Assisted (API) | Penggunaan Google Gemini API secara spesifik HANYA untuk membuat narasi ringkasan eksekutif dari laporan agregat akhir, BUKAN untuk klasifikasi komentar individual. |
+
+---
+
+## Keamanan & Pengelolaan Secrets
+
+> [!WARNING]
+> **JANGAN PERNAH** melakukan commit file `.env` atau kunci API ke dalam *version control* (Git). Segala token rahasia (seperti `YOUTUBE_API_KEY` dan `GEMINI_API_KEY`) hanya boleh disimpan secara lokal di mesin masing-masing dalam file `.env`. Repositori ini telah menyediakan file `.env.example` sebagai referensi konfigurasi dan telah mengecualikan `.env` secara eksplisit dalam `.gitignore` demi keamanan.
+
+---
+
 ## Arsitektur Sistem
 
 Aplikasi ini menggunakan arsitektur **Decoupled Client-Server**:

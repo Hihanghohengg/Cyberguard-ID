@@ -67,6 +67,7 @@ if FRONTEND_DIR.exists():
 
 
 @app.get("/", include_in_schema=False)
+@app.head("/", include_in_schema=False)
 async def serve_index():
     """Serve the SPA index.html."""
     index_path = FRONTEND_DIR / "index.html"

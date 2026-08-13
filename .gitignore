@@ -34,6 +34,8 @@ models/*.pkl
 *.bin
 *.pt
 *.pth
+*.onnx
+*.onnx.data
 
 # Database
 artifacts/*.db

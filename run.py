@@ -2,7 +2,7 @@
 """CyberGuard-ID — One-Command Runner (Production-Ready).
 
 Usage:
-    python run.py             # Jalankan server aplikasi web (http://localhost:8000)
+    python run.py             # Jalankan server aplikasi web (http://localhost:8001)
     python run.py --no-browser # Jalankan server tanpa membuka browser otomatis
     python run.py --train     # Latih model IndoBERT (membutuhkan waktu)
     python run.py --test      # Jalankan seluruh unit & integration test
@@ -181,7 +181,7 @@ def setup_env_file() -> None:
             "USE_GEMINI=true\n"
             "ANONYMIZATION_SALT=rahasia-cyberguard-salt\n"
             "APP_ENV=development\n"
-            "APP_PORT=8000\n"
+            "APP_PORT=8001\n"
             "LOG_LEVEL=INFO\n",
             encoding="utf-8",
         )
@@ -347,11 +347,11 @@ def run_app(open_browser: bool = True) -> None:
 
     load_dotenv(ENV_FILE)
 
-    port_str = os.getenv("APP_PORT", "8000")
+    port_str = os.getenv("APP_PORT", "8001")
     try:
         port = int(port_str)
     except ValueError:
-        port = 8000
+        port = 8001
 
     port = ensure_available_port(port)
     url = f"http://localhost:{port}"

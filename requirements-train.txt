@@ -1,0 +1,40 @@
+# =============================================================================
+# CyberGuard-ID — Training Dependencies
+# =============================================================================
+# File ini berisi dependensi KHUSUS untuk fine-tuning IndoBERT dan konversi
+# ke ONNX. TIDAK dibutuhkan untuk menjalankan server/inference (gunakan
+# requirements.txt untuk produksi).
+#
+# Install:
+#   pip install -r requirements-train.txt
+#
+# Catatan: PyTorch versi CUDA tersedia di https://pytorch.org/get-started/
+#          Untuk CPU-only: pip install torch --index-url https://download.pytorch.org/whl/cpu
+# =============================================================================
+
+# === PyTorch (deep learning framework) ===
+# Gunakan versi CPU jika tidak ada GPU:
+torch>=2.1.0
+# Atau versi CUDA (contoh CUDA 12.1):
+# --index-url https://download.pytorch.org/whl/cu121
+# torch>=2.1.0
+
+# === HuggingFace Ecosystem ===
+transformers>=4.40.0,<5.0      # Model BERT, tokenizer, Trainer API
+datasets>=2.20.0,<3.0          # Dataset loading & tokenization pipeline
+tokenizers>=0.19.0             # Fast tokenizer (Rust-based)
+accelerate>=0.30.0,<1.0        # Distributed training & device placement
+
+# === ONNX Conversion ===
+optimum[onnxruntime]>=1.20.0   # HuggingFace Optimum for ONNX export
+onnxruntime>=1.18.0            # ONNX Runtime inference (juga di requirements.txt)
+onnx>=1.16.0                   # ONNX format toolkit
+
+# === ML Training Utilities ===
+scikit-learn>=1.5.0,<2.0       # Metrics: accuracy, F1, classification_report
+pandas>=2.2.0,<3.0             # DataFrame untuk dataset loading
+numpy>=1.26.0,<2.0             # Numerical operations
+nlpaug>=1.1.11                 # Data augmentation untuk kelas minoritas
+
+# === Monitoring (opsional) ===
+# tensorboard>=2.16.0          # Aktifkan jika ingin visualisasi loss curves

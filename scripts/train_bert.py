@@ -54,6 +54,7 @@ from transformers import (
     DataCollatorWithPadding,
     Trainer,
     TrainingArguments,
+    EarlyStoppingCallback,
 )
 
 # Setup logging
@@ -74,7 +75,7 @@ MODEL_DIR.mkdir(parents=True, exist_ok=True)
 MODEL_NAME = "indobenchmark/indobert-base-p1"
 MAX_SEQ_LENGTH = 128
 BATCH_SIZE = 16
-EPOCHS = 5
+EPOCHS = 10
 LEARNING_RATE = 2e-5
 WEIGHT_DECAY = 0.01
 RANDOM_SEED = 42
@@ -172,13 +173,20 @@ def main() -> None:
     logger.info("=" * 60)
 
     # --- Validasi ketersediaan data ---
-    train_path = PROCESSED_DIR / "train.csv"
+    train_aug_path = PROCESSED_DIR / "train_augmented.csv"
+    train_orig_path = PROCESSED_DIR / "train.csv"
     val_path = PROCESSED_DIR / "val.csv"
 
-    if not train_path.exists():
-        logger.error("File training tidak ditemukan: %s", train_path)
+    if train_aug_path.exists():
+        logger.info("Ditemukan dataset augmented: %s", train_aug_path)
+        train_path = train_aug_path
+    elif train_orig_path.exists():
+        logger.info("Dataset augmented tidak ditemukan, menggunakan: %s", train_orig_path)
+        train_path = train_orig_path
+    else:
+        logger.error("File training tidak ditemukan: %s", train_orig_path)
         logger.error("Buat split dataset terlebih dahulu. Lihat: data/processed/README.md")
-        raise FileNotFoundError(f"Dataset training tidak ditemukan: {train_path}")
+        raise FileNotFoundError(f"Dataset training tidak ditemukan: {train_orig_path}")
 
     if not val_path.exists():
         logger.error("File validasi tidak ditemukan: %s", val_path)
@@ -272,6 +280,7 @@ def main() -> None:
         data_collator=data_collator,
         compute_metrics=compute_metrics,
         class_weights=class_weights_tensor,
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=2)]
     )
 
     logger.info("Memulai fine-tuning...")

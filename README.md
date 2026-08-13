@@ -1,6 +1,5 @@
 # CyberGuard-ID
 
-![CyberGuard-ID Dashboard](docs/dashboard_ui.jpg)
 
 🚀 **Live Demo:** [https://cyberguard-id.onrender.com](https://cyberguard-id.onrender.com)
 

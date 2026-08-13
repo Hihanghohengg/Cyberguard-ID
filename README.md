@@ -1,5 +1,7 @@
 # CyberGuard-ID
 
+![CyberGuard-ID Dashboard](docs/dashboard_ui.jpg)
+
 🚀 **Live Demo:** [https://cyberguard-id.onrender.com](https://cyberguard-id.onrender.com)
 
 **Platform Skrining dan Prioritisasi Moderasi Komentar YouTube Indonesia Berbasis AI/ML.**

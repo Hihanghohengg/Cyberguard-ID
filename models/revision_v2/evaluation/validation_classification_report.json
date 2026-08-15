@@ -1,0 +1,45 @@
+{
+    "normal": {
+        "precision": 0.9272727272727272,
+        "recall": 0.8703071672354948,
+        "f1-score": 0.897887323943662,
+        "support": 879.0
+    },
+    "abusive": {
+        "precision": 0.6352201257861635,
+        "recall": 0.7709923664122137,
+        "f1-score": 0.696551724137931,
+        "support": 262.0
+    },
+    "hate_speech_weak": {
+        "precision": 0.7655601659751037,
+        "recall": 0.727810650887574,
+        "f1-score": 0.7462082912032356,
+        "support": 507.0
+    },
+    "hate_speech_moderate": {
+        "precision": 0.68,
+        "recall": 0.73046875,
+        "f1-score": 0.704331450094162,
+        "support": 256.0
+    },
+    "hate_speech_strong": {
+        "precision": 0.8133333333333334,
+        "recall": 0.8591549295774648,
+        "f1-score": 0.8356164383561644,
+        "support": 71.0
+    },
+    "accuracy": 0.8020253164556962,
+    "macro avg": {
+        "precision": 0.7642772704734656,
+        "recall": 0.7917467728225495,
+        "f1-score": 0.7761190455470309,
+        "support": 1975.0
+    },
+    "weighted avg": {
+        "precision": 0.8108688967315171,
+        "recall": 0.8020253164556962,
+        "f1-score": 0.8049137880800256,
+        "support": 1975.0
+    }
+}

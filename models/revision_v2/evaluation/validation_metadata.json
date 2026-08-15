@@ -1,0 +1,108 @@
+{
+    "algorithm": "IndoBERT Revision V2 Validation",
+    "model_name": "indobenchmark/indobert-base-p1",
+    "classes": [
+        "normal",
+        "abusive",
+        "hate_speech_weak",
+        "hate_speech_moderate",
+        "hate_speech_strong"
+    ],
+    "eval_metrics": {
+        "test_accuracy": 0.802025,
+        "test_macro_f1": 0.776119
+    },
+    "per_class_metrics": {
+        "normal": {
+            "precision": 0.9273,
+            "recall": 0.8703,
+            "f1": 0.8979,
+            "support": 879
+        },
+        "abusive": {
+            "precision": 0.6352,
+            "recall": 0.771,
+            "f1": 0.6966,
+            "support": 262
+        },
+        "hate_speech_weak": {
+            "precision": 0.7656,
+            "recall": 0.7278,
+            "f1": 0.7462,
+            "support": 507
+        },
+        "hate_speech_moderate": {
+            "precision": 0.68,
+            "recall": 0.7305,
+            "f1": 0.7043,
+            "support": 256
+        },
+        "hate_speech_strong": {
+            "precision": 0.8133,
+            "recall": 0.8592,
+            "f1": 0.8356,
+            "support": 71
+        }
+    },
+    "confusion_matrix": [
+        [
+            765,
+            52,
+            30,
+            30,
+            2
+        ],
+        [
+            12,
+            202,
+            40,
+            8,
+            0
+        ],
+        [
+            27,
+            61,
+            369,
+            44,
+            6
+        ],
+        [
+            20,
+            3,
+            40,
+            187,
+            6
+        ],
+        [
+            1,
+            0,
+            3,
+            6,
+            61
+        ]
+    ],
+    "best_checkpoint": "D:\\Obed\\cyberguard-id\\models\\revision_v2\\checkpoints\\checkpoint-577",
+    "training_history": [
+        {
+            "epoch": 1.0,
+            "eval_loss": 0.5768545866012573,
+            "eval_accuracy": 0.8020253164556962,
+            "eval_macro_f1": 0.7761190455470309,
+            "step": 577
+        },
+        {
+            "epoch": 2.0,
+            "eval_loss": 0.5806804299354553,
+            "eval_accuracy": 0.7944303797468354,
+            "eval_macro_f1": 0.765830036149364,
+            "step": 1154
+        },
+        {
+            "epoch": 3.0,
+            "eval_loss": 0.6663859486579895,
+            "eval_accuracy": 0.809620253164557,
+            "eval_macro_f1": 0.7756570503509739,
+            "step": 1731
+        }
+    ]
+}

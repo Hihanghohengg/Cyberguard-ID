@@ -193,9 +193,9 @@ Setiap komentar melewati pipeline berikut:
 5. **Adaptive Learning** — override dengan label yang pernah dikoreksi manusia
 6. **Risk Engine** — skor risiko berdasarkan kategori + faktor kontekstual
 
-### 5. Hasil Evaluasi Model
+### 5. Hasil Evaluasi Model Awal (V1)
 
-Evaluasi dilakukan pada held-out test set menggunakan model IndoBERT ONNX int8:
+Evaluasi awal dilakukan pada model versi pertama menggunakan dataset internal:
 
 | Metrik | Nilai |
 |--------|-------|
@@ -204,30 +204,54 @@ Evaluasi dilakukan pada held-out test set menggunakan model IndoBERT ONNX int8:
 | Model size (ONNX int8) | ~110 MB |
 | Inference time | <100ms / komentar |
 
-#### Performa per Kelas (Contoh)
-| Kelas | Precision | Recall | F1-Score | Support |
-|-------|-----------|--------|----------|---------|
-| C0 (Normal) | - | - | - | - |
-| C1 (Abusive) | - | - | - | - |
-| C2 (Hate Speech Lemah) | - | - | - | - |
-| C3 (Hate Speech Sedang) | - | - | - | - |
-| C4 (Hate Speech Kuat) | - | - | - | - |
+---
 
-#### Confusion Matrix (Contoh)
-```
-                          Prediksi
-                 C0    C1    C2    C3    C4
-              -----------------------------
-          C0 |   -     -     -     -     - 
- Aktual   C1 |   -     -     -     -     - 
-          C2 |   -     -     -     -     - 
-          C3 |   -     -     -     -     - 
-          C4 |   -     -     -     -     - 
-```
-*(Catatan: Lakukan training dan evaluasi ulang untuk mengisi metrik di atas berdasarkan model terbaru)*
+### 6. Hasil Eksperimen Revisi & Log Riset (V2)
 
-> [!TIP]
-> Jalankan `python scripts/evaluate_model.py` untuk mendapatkan metrik lengkap per kelas pada test set Anda.
+Untuk revisi terbaru, model dilatih secara transparan menggunakan dataset publik **Ibrohim & Budi (2019)** bersumber dari Twitter/X (13.169 teks). Split dataset: 70% Train, 15% Val, 15% Test.
+**Penting:** `test.csv` **belum digunakan** sama sekali untuk *hyperparameter tuning*, seleksi model, atau eksperimen augmentasi. Seluruh metrik di bawah divalidasi menggunakan *validation set*.
+
+#### A. Model Terbaik Saat Ini: Baseline Weighted Cross-Entropy
+Untuk menangani *class imbalance*, kami menetapkan *baseline* menggunakan Weighted Cross-Entropy Loss (LR=2e-5, Batch=16, Epochs=3, Max Length=128). Best checkpoint diperoleh pada Epoch 1 / Step 577.
+
+| Metrik Keseluruhan | Nilai |
+|--------------------|-------|
+| **Validation Accuracy** | 80.10% |
+| **Validation Macro F1** | 77.34% |
+
+**Performa per Kelas (Baseline):**
+| Kelas | F1-Score |
+|-------|----------|
+| C0 (Normal) | 89.66% |
+| C1 (Abusive) | 69.70% |
+| C2 (Hate Speech Lemah) | 75.41% |
+| C3 (Hate Speech Sedang) | 68.05% |
+| C4 (Hate Speech Kuat) | 83.92% |
+
+*Catatan: Lihat `models/experiment_2_focal/confusion_matrix.png` untuk matriks kebingungan visual dari eksperimen.*
+
+#### B. Eksperimen Focal Loss (Alpha-Balanced)
+- **Metode**: Menggunakan *Focal Loss* (gamma=2, class weights sama dengan baseline) untuk mencoba menaikkan performa kelas tersulit (C1 dan C3).
+- **Sanity Check**: Saat gamma=0, *loss* identik absolut (`0.0`) dengan Weighted CE (`2.19430447`).
+- **Hasil**: 
+  - Accuracy naik (80.41%). C1 F1 (71.63%) dan C3 F1 (68.53%) juga sedikit meningkat. 
+  - Namun, Macro F1 keseluruhan **turun (76.85%)** karena performa deteksi kelas C4 anjlok. 
+- **Kesimpulan Jujur**: Weighted Cross-Entropy tetap kami pilih sebagai metode final/terbaik berdasarkan stabilitas Macro F1.
+
+#### C. Quality Control: Augmentasi Gagal
+Eksperimen augmentasi NLP (seperti *Contextual MLM* dan *Protected-token MLM*) telah kami uji, namun ditolak pada tahap QC karena menyebabkan *semantic/label corruption* (misalnya makian berubah menjadi kata ramah). Skrip-skrip tersebut dihapus dan hasil modelnya dieliminasi dari produksi.
+
+#### D. Reproducibility
+*Scratch script* yang tidak berguna telah dihapus. Skrip yang dapat direproduksi berada di folder `scripts/`:
+1. `preprocess_kaggle.py`
+2. `train_bert.py` (Baseline)
+3. `train_bert_exp2.py` (Focal Loss)
+4. `eval_exp2_metadata.py` (Inference & Evaluation-only)
+5. `check_focal_loss.py` (Sanity check Focal Loss)
+
+#### E. Limitations
+- **Domain Shift**: Dataset pelatihan bersumber dari Twitter/X, sementara aplikasi ini ditujukan untuk analisis komentar YouTube. 
+- **Target Metrik**: Akurasi dasar >80% telah tercapai, namun target absolut Macro F1 di atas 85% untuk hate speech tingkat lanjut masih belum dapat dicapai dalam tahap ini secara jujur.
 
 ---
 

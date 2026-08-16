@@ -36,6 +36,12 @@ models/*.pkl
 *.pth
 *.onnx
 *.onnx.data
+models/**/checkpoints/
+models/baseline_3epoch/
+models/baseline_experiment/
+models/v2_retrained/
+models/experiment_2_focal/model.safetensors
+
 
 # Database
 artifacts/*.db
